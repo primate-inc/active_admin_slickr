@@ -1,0 +1,325 @@
+%main_content_container {
+  padding: 10vh 8vw;
+}
+///// ELEMENTS /////
+%container {
+  padding: 30px; margin-bottom: 10px;
+  border-radius: 3px;
+}
+%narrow_container {
+  padding: 10px; margin-bottom: 10px;
+  border-radius: 3px;
+}
+%container_blue {
+  @extend %container;
+  background: $blue;
+}
+%container_black {
+  @extend %container;
+  background: $grey_darkest;
+}
+%container_grey {
+  @extend %container;
+  background: $grey_lightest;
+}
+%container_alert {
+  @extend %narrow_container;
+  background: $alert;
+  color: $white;
+}
+%admin_text_input_field {
+  box-sizing: border-box;
+  padding: 8px 8px 8px .5em; height: 40px;
+  margin: 0;
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 700;
+  color: $grey_darkest;
+  background: $grey_lightest;
+  border: none;
+  border-bottom: 1px solid $grey_lighter;
+  transition: .2s;
+  &:focus {
+    outline: none;
+    background: rgba($blue,.1);
+    border-color: $blue;
+  }
+
+  &:hover {
+    border-color: $blue;
+  }
+}
+%text_input_field {
+  box-sizing: border-box;
+  padding: 8px 12px; height: 40px;
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 700;
+  color: $grey_darkest;
+  background: $white;
+  border: 1px solid $grey_lighter; border-radius: 3px;
+  transition: .2s;
+
+  &:hover {
+    border-color: $blue;
+  }
+}
+.page_entry {
+  @extend %text_input_field;
+}
+
+
+%button {
+  box-sizing: border-box; display: inline-block;
+  padding: 8px 12px; height: 40px;
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $blue;
+  background: white; text-decoration: none;
+  border: 2px solid $blue; border-radius: 3px;
+  cursor: pointer;
+
+  transition: .2s;
+
+  &:hover {
+    color: white;
+    background: $blue;
+  }
+
+}
+%small_button {
+  @extend %button;
+  padding: 6px 10px; height: 34px;
+  font-size: 14px;
+}
+
+.button {
+  @extend %button;
+  &.small {
+    @extend %small_button;
+  }
+}
+
+
+.container.blue {
+  .button {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    background: $blue_dark;
+
+    &:hover {
+      background: darken($blue_dark, 10%);
+    }
+  }
+}
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+
+%breadcrumb_link {
+  @extend .para_small_style;
+  color: $blue; text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.breadcrumb_link {
+  @extend %breadcrumb_link;
+}
+
+.nav_header {
+  font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.2em; font-weight: 400; color: $white;
+}
+%nav_link {
+  box-sizing: border-box;
+  padding: 8px 12px; height: 40px;
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: white; text-decoration: none;
+
+  transition: .2s;
+
+  &:hover {
+    color: white;
+    background: $grey_darkest;
+  }
+}
+%nav_link_active {
+  @extend %nav_link;
+  color: $blue;
+  background: $grey_darkest;
+}
+
+.nav_link {
+  @extend %nav_link;
+}
+.nav_link_active {
+  @extend %nav_link_active;
+}
+
+%user_link {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+%sign_out_link {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $grey;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.user_link {
+  @extend %user_link;
+}
+
+.sign_out_link {
+  @extend %sign_out_link;
+}
+
+%filter_label {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $white;
+}
+
+%filter_dropdown {
+  box-sizing: border-box; display: inline-block;
+  padding: 6px 10px; height: 34px;
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $white;
+  border: 1px solid $white; border-radius: 3px;
+}
+
+%filter_field {
+  box-sizing: border-box; display: inline-block;
+  padding: 6px 10px; height: 34px;
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $grey;
+  background: $white; border: 2px solid $white; border-radius: 3px;
+
+  &:focus {
+    outline: none;
+    color: $grey_darker;
+    border-color: $blue_dark;
+  }
+}
+
+%tab_link {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $blue_dark;
+
+  &.active {
+    color: $white;
+  }
+}
+
+
+.tab_link {
+  @extend %tab_link;
+}
+%blue_section {
+  background: $blue;
+  padding: 1em 2em;
+}
+
+%action-button-alt {
+  display: inline-block;
+  cursor: pointer;
+  padding: .5em 1em;
+  border: none;
+  border-radius: .3em;
+  color: white;
+  background: $blue_dark;
+  text-decoration: none;
+  transition: .4s;
+  &:hover {
+    background: white;
+    color: $blue_dark;
+  }
+}
+
+%label {
+  @extend .para_style;
+  color: $blue;
+  padding-left: .5em;
+  margin-bottom: .25em;
+  abbr {
+    text-decoration: none;
+  }
+}
+%large_cta {
+  box-sizing: border-box;
+  padding: 3em;
+  border-radius: 3px; background: white;
+  position: relative;
+  border: 5px solid white;
+  max-width: 60vw;
+  margin: 2em auto;
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 3px; right: 3px; bottom: 3px; left: 3px;
+    border: 2px solid $grey_lighter;
+  }
+  span, .main_text {
+    @extend .h4;
+    display: block;
+    position: relative;
+    text-align: center;
+  }
+  span.alternative_text {
+    display: inline;
+    cursor: pointer;
+  }
+  a, .alternative_text {
+    color: $blue;
+    text-decoration: none;
+
+  }
+  .large-cta__hint {
+    @extend .para;
+    text-align: center;
+    color: $grey_light;
+  }
+
+}
+.svg-icon {
+  fill: $blue;
+}
+%styled_html_list-item {
+  padding: 1em .75em;
+  margin-bottom: .75em;
+  background: white;
+  border: 1px solid $grey_lighter;
+}
+%avatar_list {
+  list-style: none;
+  padding: 0; margin: 0;
+  li {
+    @extend %styled_html_list-item;
+  }
+  .dashboard__events-item__header {
+    @extend .h4;
+    margin-bottom: 1em;
+  }
+  .dashboard__events-item__header_type {
+    margin-right: .5em;
+    color: $blue;
+    font-size: .9em;
+  }
+
+  .dashboard__events-item__content {
+    display: flex;
+    align-items: center;
+    @extend .para_style;
+    color: $grey;
+    span {
+      display: inline-block; margin: 0 .5em;
+      font-weight: bolder;
+      color: black;
+    }
+  }
+  .dashboard__events-item__avatar {
+    @extend %display-avatar;
+    margin-right: 1em;
+  }
+}
+%display-avatar {
+  border-radius: 50%;
+}

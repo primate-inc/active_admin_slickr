@@ -1,0 +1,63 @@
+#filters_sidebar_section {
+  @extend %blue_section;
+  h3 { display: none; }
+}
+.clear_filters_btn {
+  @extend %tab_link;
+  text-decoration: none;
+}
+#search-status-_sidebar_section {
+  display: none;
+}
+.filter_form {
+  display: grid;
+  grid-template-columns: [filters] auto [buttons] 15em;
+  grid-auto-flow: row;
+  .buttons {
+    grid-column: buttons;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+  }
+
+  input[type="submit"] {
+    @extend %small_button;
+    padding: 8px 12px; margin-right: 1em;
+    color: white; border: none; background: $blue_dark;
+    &:hover {
+      background: darken($blue_dark, 10%);
+    }
+    &:before {
+      content: ' ';
+      background: image-url('svgs/tick.svg') no-repeat;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: .25em;
+    }
+  }
+  .filter_fields {
+    grid-column: filters/buttons;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .input {
+      display: flex;
+      align-items: center;
+
+      label {
+        @extend %filter_label;
+        margin-right: 1em;
+      }
+      & > select {
+        @extend %filter_dropdown;
+        background: $blue;
+        margin-right: 1em;
+      }
+      input {
+        @extend %filter_field
+      }
+    }
+  }
+}

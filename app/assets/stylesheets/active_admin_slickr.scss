@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+@import "./variables";
+@import "./fonts";
+@import "./elements";
+@import "./form_elements";
+@import "./login_screen";
+@import "./logged_in";
+@import "./filter_bar";
+
+.m-calendar .current-day {
+  background: $blue; color: white;
+}
+
+
+$brand-alt: #333333;
+$black: #1D1D1D;
+$brand-darker-alt: #1A1A1A;
+$default-text-alt: #E4E4E4;
+$muted-text-alt: #6C6C6C;
+
+body { margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
+#header {
+  grid-column: sidebar/main-content;
+  grid-row: sidebar;
+  align-self: stretch;
+  background: $brand-alt;
+  display: grid;
+  grid-template-rows: [title] auto [account-info] 2em [navigation] 100fr;
+  padding: .5em 0;
+  ul { list-style: none }
+}
+#site_title {
+  grid-row: title/account-info;
+  justify-self: center;
+  width: 80%;
+  margin: 0 0 .5em; padding: 0;
+  img { display: block; width: 100%; }
+}
+#utility_nav {
+  grid-row: account-info/navigation;
+  align-self: center;
+  justify-self: center;
+  width: 80%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  li {
+    display: inline-block;
+  }
+  a {
+    color: inherit; text-decoration: none;
+  }
+}
+li#current_user {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+  &:before {
+    content: ' ';
+    background: image-url("svgs/user.svg") no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: .25em;
+  }
+}
+#tabs {
+  grid-row: navigation;
+  list-style: none;
+  padding: 2em 0 0; margin: 0;
+  a {
+    @extend %nav_link;
+    padding: 8px 20px;
+    display: block;
+  }
+  li.current a {
+    @extend %nav_link_active;
+    padding: 8px 20px;
+  }
+}
+#current_user {
+  @extend %user_link;
+  margin-right: .5em;
+}
+#logout {
+  @extend %sign_out_link;
+}
+#title_bar {
+  grid-column: main-content;
+  grid-row: header/content;
+  align-self: center;
+  padding: 0 2em;
+  display: grid;
+  grid-template-columns: [info] auto [actions] auto;
+}
+#titlebar_left {
+  grid-column: info/actions;
+  justify-self: left;
+  align-self: center;
+  .breadcrumb {
+    @extend .para_small_style;
+    color: $blue;
+    a {
+      @extend %breadcrumb_link;
+    }
+  }
+}
+#titlebar_right {
+  grid-column: actions;
+  justify-self: right;
+  align-self: center;
+}
+#page_title {
+  @extend .h1;
+  margin: 0;
+}
+.flashes {
+  grid-column: main-content;
+  grid-row: content/footer;
+}
+
+#main_content_wrapper {
+  grid-row: content;
+}
+#footer {
+  grid-column: footer;
+  grid-row: footer;
+}
+#title_bar .action_items span.action_item > a, #title_bar .action_items div.action_item {
+  @extend %button;
+  display: flex;
+  align-items: center;
+  svg { transition: .2s;  fill: $blue;}
+  &:hover svg { fill: white;}
+}
+#title_bar .action_items div.action_item.active {
+  background: $blue; color: white;
+  svg { fill: white; }
+}
+#title_bar .action_items div.action_item:hover > svg { fill: white }
+#title_bar .action_items div.action_item:hover .arrow svg { fill: white; transform: rotate(180deg) }
+#title_bar .action_items div.action_item:hover .arrow:hover svg { fill: white }
+#title_bar .action_items div.action_item:hover span svg { fill: $blue }
+#title_bar .action_items div.action_item:hover span:hover svg { fill: white }

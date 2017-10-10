@@ -1,0 +1,58 @@
+.logged_out {
+  background: $white;
+  #wrapper {
+  }
+  #content_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,.5fr);
+    align-items: center;
+    grid-template-areas:
+      ". alerts ."
+      ". a ."
+      ". . ."
+  }
+  .flash {
+    grid-area: alerts;
+    align-self: end;
+  }
+  .flash_alert {
+    @extend %container_alert;
+  }
+  #active_admin_content {
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+  }
+  #error_explanation {
+    @extend %container_alert;
+    h2 {
+      @extend .h4;
+      color: $white;
+    }
+    ul {
+      margin: 0; padding: 0;
+      list-style-type: none;
+    }
+  }
+  #login {
+    @extend %container_grey;
+    background: $grey_lightest;
+    border: 1px solid $grey_lighter;
+    border-radius: 2px;
+    padding: 2.5em;
+    h2 {
+      @extend .h2;
+      margin: 0 0 .5em;
+    }
+    form {
+      @extend %container;
+      @extend %login_form_basics;
+      background: $white;
+      min-width: 430px;
+    }
+    a {
+      @extend %breadcrumb_link;
+    }
+  }
+}

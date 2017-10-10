@@ -1,0 +1,45 @@
+///// TYPOGRAPHY /////
+.h1 {
+  font-family: 'Lato', sans-serif; font-size: 30px; font-weight: 700; color: $grey_darkest;
+}
+
+.h2 {
+  font-family: 'Lato', sans-serif; font-size: 26px; font-weight: 400; color: $grey_darkest;
+}
+
+.h3 {
+  font-family: 'Lato', sans-serif; font-size: 20px; font-weight: 700; color: $grey_darkest;
+}
+
+.h4 {
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 700; color: $grey_darkest;
+}
+
+.h5 {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: $grey_darkest;
+}
+
+.h6 {
+  font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; color: $grey_darkest;
+  text-transform: uppercase;
+}
+
+.para_style {
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: $grey_darkest;
+}
+
+.para {
+  font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.7em; font-weight: 400; color: $grey_darkest;
+}
+
+.para_small_style {
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $grey_darkest;
+}
+.para_small {
+  font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.7em; font-weight: 400; color: $grey_darkest;
+}
+.subtitle {
+  padding-bottom: 5px; margin-bottom: 30px;
+  font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 600; color: $grey_darkest;
+  border-bottom: 2px solid $grey_lighter;
+}
