@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-@import "./variables";
-@import "./fonts";
-@import "./elements";
-@import "./form_elements";
-@import "./login_screen";
-@import "./logged_in";
-@import "./filter_bar";
-@import "./datepicker";
-@import "./dialog";
+@import './variables';
+@import './fonts';
+@import './elements';
+@import './form_elements';
+@import './login_screen';
+@import './logged_in';
+@import './filter_bar';
+@import './datepicker';
+@import './dialog';
+@import './resource_view';
 
 body { margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 #header {
@@ -81,7 +82,7 @@ li#current_user {
 }
 #title_bar {
   grid-column: main-content;
-  grid-row: header/content;
+  grid-row: header/flashes;
   align-self: center;
   padding: 0 2em;
   display: grid;
@@ -110,7 +111,17 @@ li#current_user {
 }
 .flashes {
   grid-column: main-content;
-  grid-row: content/footer;
+  grid-row: flashes/content;
+  .flash {
+    position: relative;
+    top: -2em;
+    padding: 1em 2em;
+
+    &_notice {
+      background-color: $notice;
+      color: white;
+    }
+  }
 }
 
 #main_content_wrapper {

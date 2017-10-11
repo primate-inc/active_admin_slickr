@@ -1,0 +1,46 @@
+.logged_in {
+  .panel { padding: 2em; }
+  table {
+    list-style-type: none;
+    padding: 0; margin: 0;
+    cursor: default;
+    tr {
+      display: flex;
+      justify-content: flex-start;
+      flex-flow: column;
+      margin-bottom: 1.5em;
+    }
+    th {
+      @extend %label;
+      text-align: left;
+    }
+    td {
+      @extend %admin_text_input_field;
+    }
+  }
+  .comments {
+    h3 { @extend .subtitle; }
+    .active_admin_comment {
+      margin-bottom: 1em;
+      border-bottom: 1px solid $grey_lighter;
+      p { margin: .75em 0; }
+    }
+    .active_admin_comment_meta {
+      & > span, & > a {
+        @extend .para_small_style;
+      }
+      & > span { display: inline-block; margin-right: 1em }
+      a {
+        color: $blue; text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .active_admin_comment_author {
+        @extend .h4;
+        margin: .25em 0;
+      }
+    }
+    form { padding: 0; }
+  }
+}

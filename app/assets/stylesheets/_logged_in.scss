@@ -45,9 +45,10 @@
     display: grid;
     align-content: stretch;
     grid-template-columns: [sidebar] 14em [main-content] 100fr;
-    grid-template-rows: [header] 8em [content] 100fr [footer] 50px;
+    grid-template-rows: [header] 8em [flashes] 1em [content] 100fr [footer] 50px;
     grid-template-areas:
       "sidebar content-header"
+      "sidebar content-flashes"
       "sidebar content-main"
       "sidebar footer"
   }
