@@ -45,6 +45,7 @@
     .input {
       display: flex;
       align-items: center;
+      padding: 0.5em;
 
       label {
         @extend %filter_label;
@@ -56,7 +57,11 @@
         margin-right: 1em;
       }
       input {
-        @extend %filter_field
+        @extend %filter_field;
+
+        &:nth-of-type(2) {
+          margin-left: 0.5em;
+        }
       }
     }
   }

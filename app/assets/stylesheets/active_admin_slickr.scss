@@ -7,17 +7,8 @@
 @import "./login_screen";
 @import "./logged_in";
 @import "./filter_bar";
-
-.m-calendar .current-day {
-  background: $blue; color: white;
-}
-
-
-$brand-alt: #333333;
-$black: #1D1D1D;
-$brand-darker-alt: #1A1A1A;
-$default-text-alt: #E4E4E4;
-$muted-text-alt: #6C6C6C;
+@import "./datepicker";
+@import "./dialog";
 
 body { margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 #header {
