@@ -62,6 +62,19 @@
         &:nth-of-type(2) {
           margin-left: 0.5em;
         }
+
+        &.datepicker {
+          @extend %filter_dropdown;
+          background: $blue;
+
+          &:focus {
+            border-color: white;
+            color: white;
+          }
+        }
+      }
+      input::placeholder {
+        color: white;
       }
     }
   }

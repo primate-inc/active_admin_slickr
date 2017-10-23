@@ -44,11 +44,11 @@
     min-height: 100vh;
     display: grid;
     align-content: stretch;
-    grid-template-columns: [sidebar] 14em [main-content] 100fr;
-    grid-template-rows: [header] 8em [flashes] 1em [content] 100fr [footer] 50px;
+    grid-template-columns: [sidebar] 18em [main-content] 100fr;
+    grid-template-rows: [header] 4em [flash] auto [content] 95fr [footer] 5fr;
     grid-template-areas:
       "sidebar content-header"
-      "sidebar content-flashes"
+      "sidebar content-flash"
       "sidebar content-main"
       "sidebar footer"
   }
@@ -64,7 +64,10 @@
     }
   }
   #main_content_wrapper {
-    background: $grey_lightest;
+    background: white;
+    border-top: $grey_lightest;
+    border-top-width: 2px;
+    border-top-style: solid;
   }
   #collection_selection, .formtastic   { @extend %main_content_container; }
   #main_content {
@@ -138,16 +141,34 @@
       align-items: flex-end;
       position: relative;
       .dropdown_menu_button {
-        @extend %breadcrumb_link;
+        @extend %filter_dropdown;
         display: inline-block;
-        background: $white;
+        background: $blue;
         padding: .5em 1em;
+        margin: .5em .5em 0;
         flex: 0 1 6.5em;
+        text-decoration: none;
+
+        &:hover {
+          background: $blue_dark;
+        }
+
+        &:after {
+          content: '';
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 2px;
+          transform: rotate(45deg);
+          vertical-align: middle;
+          margin: 0 0 .25em .5em;
+        }
       }
       .dropdown_menu_list {
         margin: 0; padding: 0; list-style-type: none;
         position: absolute;
         padding: .5em 1em;
+        margin-left: .5em;
         background: $white;
         box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.3);
         a {
@@ -160,13 +181,24 @@
     @extend %display-avatar;
   }
   #index_footer {
-    max-width: 60vw;
-    margin: 1em 0;
     @extend .para_small_style;
+    padding: 1em 0;
+    background-color: $grey_lightest;
 
     .pagination_information, .download_links {
       @extend .para_small_style;
+      display: inline-block;
       a { @extend %breadcrumb_link; }
+    }
+    .pagination_information, .download_links span {
+      color: $grey;
+    }
+    .pagination_information {
+      padding-left: 1em;
+      &:after {
+        content: '|';
+        padding: 0 .5em;
+      }
     }
     .pagination {
       @extend .para_small_style;
@@ -232,6 +264,7 @@
           td {
             background:white;
             border-bottom: 1px solid $grey_lighter;
+            color: $grey_dark;
             @extend .para_style;
           }
         }
@@ -239,8 +272,8 @@
       thead {
         th {
           padding: .75em .5em;
-          background: $blue;
-          color: $white;
+          background: $grey_lightest;
+          color: $grey;
           text-align: left;
           a {
             @extend .para_style;

@@ -1,6 +1,9 @@
 .logged_in {
   .panel {
     padding: 2em;
+    h3 {
+      display: none;
+    }
     .panel_contents {
       table {
         list-style-type: none;
@@ -17,7 +20,7 @@
           text-align: left;
         }
         td {
-          @extend %admin_text_input_field;
+          @extend %admin_text_view_field;
         }
       }
       .comments {

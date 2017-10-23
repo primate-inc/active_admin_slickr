@@ -1,5 +1,5 @@
 %main_content_container {
-  padding: 10vh 8vw;
+  padding: 0;
 }
 ///// ELEMENTS /////
 %container {
@@ -26,6 +26,13 @@
   @extend %narrow_container;
   background: $alert;
   color: $white;
+}
+%admin_text_view_field {
+  box-sizing: border-box;
+  padding: 8px 8px 8px .5em; height: 40px;
+  margin: 0;
+  font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 700;
+  color: $grey_dark;
 }
 %admin_text_input_field {
   box-sizing: border-box;
@@ -62,6 +69,22 @@
 }
 .page_entry {
   @extend %text_input_field;
+}
+
+%action_button {
+  box-sizing: border-box; display: inline-block;
+  padding: 0 12px 0 18px; height: 100%;
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $blue;
+  background: white; text-decoration: none;
+  border-left: 2px solid $grey_lightest;
+  cursor: pointer;
+
+  transition: .2s;
+
+  &:hover {
+    background: $grey_lightest;
+  }
+
 }
 
 
@@ -186,6 +209,7 @@
   padding: 6px 10px; height: 34px;
   font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $white;
   border: 1px solid $white; border-radius: 3px;
+  transition: .4s;
 }
 
 %filter_field {

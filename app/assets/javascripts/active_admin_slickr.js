@@ -12,4 +12,21 @@ $(document).ready(function() {
       $('#dialog_confirm').remove();
     });
   });
+
+  // Hide batch actions when not needed
+  $('.batch_actions_selector').hide();
+  $('.resource_selection_cell input[type="checkbox"]').change(function() {
+    if ($(".resource_selection_cell input:checkbox:checked").length) {
+      $('.batch_actions_selector').show(100);
+    } else {
+      $('.batch_actions_selector').hide(100);
+    }
+  });
+  $('.resource_selection_toggle_cell input[type="checkbox"]').change(function() {
+    if ($(".resource_selection_toggle_cell input:checkbox:checked").length) {
+      $('.batch_actions_selector').show(100);
+    } else {
+      $('.batch_actions_selector').hide(100);
+    }
+  });
 });
