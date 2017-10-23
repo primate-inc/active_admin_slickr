@@ -69,7 +69,12 @@
     border-top-width: 2px;
     border-top-style: solid;
   }
-  #collection_selection, .formtastic   { @extend %main_content_container; }
+  &.index {
+    #main_content_wrapper {
+      border-top-width: 0;
+    }
+  }
+  .formtastic   { padding: 2em; }
   #main_content {
     form {
       @extend %admin_form_basics;
@@ -145,7 +150,7 @@
         display: inline-block;
         background: $blue;
         padding: .5em 1em;
-        margin: .5em .5em 0;
+        margin: .5em .5em;
         flex: 0 1 6.5em;
         text-decoration: none;
 
@@ -168,7 +173,7 @@
         margin: 0; padding: 0; list-style-type: none;
         position: absolute;
         padding: .5em 1em;
-        margin-left: .5em;
+        margin-left: .5em; margin-top: -.5em;
         background: $white;
         box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.3);
         a {

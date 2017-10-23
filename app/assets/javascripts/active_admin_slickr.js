@@ -29,4 +29,24 @@ $(document).ready(function() {
       $('.batch_actions_selector').hide(100);
     }
   });
+
+ // Add hamburger to header
+  $('#header').prepend('<div id="hamburger" class="open" />');
+
+  // Minimise and grow sidebar
+  $('#hamburger').click(function () {
+    if($('#hamburger').hasClass('open')) {
+      $('#wrapper').css('grid-template-columns', '[sidebar] 3em [main-content] 100fr');
+      $('#hamburger').removeClass('open');
+      $('#hamburger').addClass('closed');
+      $('.tabs').hide();
+      $('#site_title').hide();
+    } else {
+      $('#wrapper').css('grid-template-columns', '[sidebar] 18em [main-content] 100fr');
+      $('#hamburger').removeClass('closed');
+      $('#hamburger').addClass('open');
+      $('.tabs').show();
+      $('#site_title').show();
+    }
+  });
 });
