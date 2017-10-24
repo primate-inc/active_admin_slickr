@@ -1,0 +1,30 @@
+.logged_in {
+  #wrapper {
+    #utility_nav {
+      li {
+        display: inline-block;
+
+        &#current_user {
+          @extend %user_link;
+          display: flex;
+          align-items: center;
+          margin-right: 1em;
+          &:before {
+            content: ' ';
+            background: image-url("svgs/user.svg") no-repeat;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: .25em;
+          }
+        }
+      }
+      #logout {
+        @extend %sign_out_link;
+      }
+      a {
+        color: inherit; text-decoration: none;
+      }
+    }
+  }
+}

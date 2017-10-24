@@ -1,0 +1,34 @@
+.logged_in {
+  #wrapper {
+    #title_bar {
+      #titlebar_left {
+        .breadcrumb {
+          @extend .para_small_style;
+          color: $blue;
+          a {
+            @extend %breadcrumb_link;
+          }
+          .breadcrumb_sep {
+            font-size: 0;
+            border: solid $blue;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 2px;
+            transform: rotate(-45deg);
+            vertical-align: middle;
+            margin: 0 6px 0 3px;
+          }
+        }
+        h2 {
+          @extend .para_small_style;
+          display: inline-block;
+          font-weight: bold;
+        }
+        .breadcrumb #page_title {
+          @extend .h1;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

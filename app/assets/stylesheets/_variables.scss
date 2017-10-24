@@ -12,11 +12,8 @@ $alert: #DF2935;
 $notice: #32E875;
 $orange: #FFBC46;
 
-$brand-alt: #333333;
+$header: #333333;
 $black: #1D1D1D;
-$brand-darker-alt: #1A1A1A;
-$default-text-alt: #E4E4E4;
-$muted-text-alt: #6C6C6C;
 
 @function url-friendly-colour($colour) {
   @return '%23' + str-slice('#{$colour}', 2, -1)

@@ -1,17 +1,13 @@
 .ui-datepicker {
-  display: inline-block;
-  width: 330px;
-  padding: 12px 15px;
-  border-radius: 3px;
-  border: 1px solid $grey_lighter;
+  display: inline-block; width: 330px; padding: 12px 15px;
+  border-radius: 3px; border: 1px solid $grey_lighter;
   background-color: white;
   a {
     text-decoration: none;
   }
   table {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: collapse; border-spacing: 0;
     table-layout: fixed;
   }
   td {
@@ -23,8 +19,7 @@
   }
   thead td, thead th {
     color: #1385e5;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 11px; font-weight: 700;
     text-transform: uppercase;
     font-size: 12px;
   }
@@ -73,16 +68,12 @@
     margin-bottom: 13px;
   }
   &-prev, &-next {
-    position: relative;
-    width: 30px;
-    height: 30px;
+    position: relative; width: 30px; height: 30px; padding: 0;
     line-height: 30px;
     color: #fff;
-    border: 1px solid #1385e5;
-    border-radius: 50%;
+    border: 1px solid #1385e5;  border-radius: 50%;
     background: #1385e5;
     font-size: 20px;
-    padding: 0;
     text-align: center;
     outline: 0;
     z-index: 5;
@@ -96,11 +87,8 @@
     float: left;
     &:before {
       content: ' ';
-      background-size: cover;
-      background-position-y: 0px;
-      display: block;
-      width: 30px;
-      height: 30px;
+      display: block; width: 30px; height: 30px;
+      background-size: cover; background-position-y: 0px;
       transform: rotate(90deg);
       background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHRpdGxlPkFydGJvYXJkIDM8L3RpdGxlPjxwb2x5Z29uIGZpbGw9JyNmZmZmZmYnIHBvaW50cz0iOS45OCAxMy4yNiA0LjkyIDguMiA2LjMzIDYuNzkgOS45OCAxMC40MyAxMy42NiA2Ljc0IDE1LjA4IDguMTYgOS45OCAxMy4yNiIvPjwvc3ZnPg==);
     }
@@ -109,16 +97,13 @@
     float: right;
     &:before {
       content: ' ';
-      background-size: cover;
-      background-position-y: 0px;
-      display: block;
-      width: 30px;
-      height: 30px;
+      display: block; width: 30px; height: 30px;
+      background-size: cover; background-position-y: 0px;
       transform: rotate(-90deg);
       background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHRpdGxlPkFydGJvYXJkIDM8L3RpdGxlPjxwb2x5Z29uIGZpbGw9JyNmZmZmZmYnIHBvaW50cz0iOS45OCAxMy4yNiA0LjkyIDguMiA2LjMzIDYuNzkgOS45OCAxMC40MyAxMy42NiA2Ljc0IDE1LjA4IDguMTYgOS45OCAxMy4yNiIvPjwvc3ZnPg==);
     }
   }
   .current-date {
-    color: #1385e5;
+    color: $blue;
   }
 }

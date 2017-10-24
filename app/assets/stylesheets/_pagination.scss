@@ -1,0 +1,41 @@
+.logged_in {
+  #wrapper {
+    #index_footer {
+      .pagination_information, .download_links {
+        @extend .para_small_style;
+        display: inline-block;
+        a { @extend %breadcrumb_link; }
+      }
+      .pagination_information, .download_links span {
+        color: $grey;
+      }
+      .pagination_information {
+        padding-left: 1em;
+        &:after {
+          content: '|';
+          padding: 0 .5em;
+        }
+      }
+      .pagination {
+        @extend .para_small_style;
+        margin-bottom: .5em;
+        .page {
+          color: $blue;
+          margin-right: .25em;
+          &.current {
+            display: inline-block; padding: .5em .75em;
+            background: $blue;
+            color: $white;
+          }
+          a {
+            background: $white;
+            text-decoration: none; color: inherit; padding: .5em .75em; display: inline-block;
+          }
+        }
+        .next a, .last a, .prev a, .first a {
+          @extend %breadcrumb_link;
+        }
+      }
+    }
+  }
+}

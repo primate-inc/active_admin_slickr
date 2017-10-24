@@ -18,7 +18,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
   }
 
   input[type="submit"] {
@@ -30,11 +29,8 @@
     }
     &:before {
       content: ' ';
+      display: inline-block; width: 20px; height: 20px; margin-right: .25em;
       background: image-url('svgs/tick.svg') no-repeat;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin-right: .25em;
     }
   }
   .filter_fields {
@@ -44,8 +40,8 @@
     flex-wrap: wrap;
     .input {
       display: flex;
-      align-items: center;
       padding: 0.5em;
+      align-items: center;
 
       label {
         @extend %filter_label;
@@ -53,8 +49,8 @@
       }
       & > select {
         @extend %filter_dropdown;
-        background: $blue;
         margin-right: 1em;
+        background: $blue;
       }
       input {
         @extend %filter_field;

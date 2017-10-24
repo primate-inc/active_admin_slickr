@@ -1,54 +1,32 @@
 .dialog_wrapper{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0,0,0,0.75);
   z-index: 10;
 
   .ui-dialog {
-    position: relative;
-    height: auto;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    top: 50% !important;
-    left: 0 !important;
+    position: relative; height: auto; width: 300px; margin: 0 auto; padding: 20px; top: 50% !important; left: 0 !important;
     transform: translateY(-50%);
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
+    border: 1px solid rgb(204, 204, 204); border-radius: 4px;
     background: rgb(255, 255, 255);
 
     &-titlebar {
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
+      font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400;
       color: $blue;
 
       button {
-        position: absolute;
-        display: flex;
+        position: absolute; display: flex; padding: 0; width: 30px; height: 30px; top: -15px; right: -15px;
         justify-content: center;
         align-items: center;
-        padding: 0;
-        width: 30px;
-        height: 30px;
-        top: -15px;
-        right: -15px;
         overflow: hidden;
         cursor: pointer;
         background: $blue;
-        border-radius: 50%;
-        border-width: 0;
+        border-radius: 50%; border-width: 0;
         transition: .2s;
 
         &:before {
           content: ' ';
           background: image-url('svgs/cross.svg') no-repeat;
-          display: inline-block;
-          width: 20px;
-          height: 20px;
+          display: inline-block; width: 20px; height: 20px;
         }
 
         svg { fill: white; }

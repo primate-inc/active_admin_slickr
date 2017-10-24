@@ -49,8 +49,7 @@
         .field_with_errors {
           &:nth-child(1) {
             flex: 1 0 120px;
-            max-width: 150px;
-            margin-right: 1em;
+            max-width: 150px; margin-right: 1em;
           }
           &:nth-child(2) {
             flex: 1 0 150px;
@@ -101,11 +100,9 @@
           flex-direction: row;
           align-items: center;
           input {
-            width: 0.1px;
-            height: 0.1px;
+            position: absolute; width: 0.1px; height: 0.1px;
             opacity: 0;
             overflow: hidden;
-            position: absolute;
             z-index: -1;
             & + label {
               @extend %button;
@@ -115,8 +112,7 @@
             }
           }
           .file_name {
-            width: 45%;
-            padding-left: .5em;
+            width: 45%; padding-left: .5em;
             color: $blue;
           }
         }
@@ -148,8 +144,7 @@
           .hint-text {
             @extend .para_small;
             color: $grey;
-            margin: 0;
-            padding: 0 1em;
+            margin: 0; padding: 0 1em;
           }
         }
         &.admin-subtitle {
@@ -159,8 +154,7 @@
         }
         &.admin-big-title {
           input {
-            font-size: 2em;
-            font-weight: bolder;
+            font-size: 2em; font-weight: bolder;
           }
         }
         .field_with_errors {
@@ -176,12 +170,10 @@
         }
         .inline-errors {
           flex-basis: 100%;
-          color: $alert;
           margin: 0 0 15px 0;
+          color: $alert;
         }
       }
     }
   }
-}
-.admin-subtitle {
 }
