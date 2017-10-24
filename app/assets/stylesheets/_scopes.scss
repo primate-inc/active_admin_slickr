@@ -12,9 +12,7 @@
               a {
                 @extend %breadcrumb_link;
                 background: $white;
-                display: block;
-                padding: .5em 1em;
-                margin-left: .5em;
+                display: block; padding: .5em 1em; margin-left: .5em;
                 text-decoration: none;
               }
               &.selected a {

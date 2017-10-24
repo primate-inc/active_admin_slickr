@@ -59,8 +59,8 @@
         }
         .inline-errors {
           flex-basis: 100%;
-          color: $alert;
           margin: 0;
+          color: $alert;
         }
       }
     }
@@ -95,10 +95,10 @@
         &.boolean label {}
         &.input_action input { @extend %button; }
         &.file_modified {
-          margin-top: 1em;
           display: flex;
           flex-direction: row;
           align-items: center;
+          margin-top: 1em;
           input {
             position: absolute; width: 0.1px; height: 0.1px;
             opacity: 0;
@@ -143,8 +143,8 @@
           }
           .hint-text {
             @extend .para_small;
-            color: $grey;
             margin: 0; padding: 0 1em;
+            color: $grey;
           }
         }
         &.admin-subtitle {

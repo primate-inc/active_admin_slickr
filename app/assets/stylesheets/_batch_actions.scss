@@ -6,11 +6,9 @@
         position: relative;
         .dropdown_menu_button {
           @extend %filter_dropdown;
-          display: inline-block;
-          background: $blue;
-          padding: .5em 1em;
-          margin: .5em .5em;
           flex: 0 1 6.5em;
+          display: inline-block; padding: .5em 1em; margin: .5em .5em;
+          background: $blue;
           text-decoration: none;
 
           &:hover {
@@ -19,20 +17,14 @@
 
           &:after {
             content: '';
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 2px;
+            display: inline-block; padding: 2px; margin: 0 0 .25em .5em;
+            border: solid white; border-width: 0 2px 2px 0;
             transform: rotate(45deg);
             vertical-align: middle;
-            margin: 0 0 .25em .5em;
           }
         }
         .dropdown_menu_list {
-          margin: 0; padding: 0; list-style-type: none;
-          position: absolute;
-          padding: .5em 1em;
-          margin-left: .5em; margin-top: -.5em;
+          position: absolute; margin: -.5em 0 0 .5em; padding: .5em 1em; list-style-type: none;
           background: $white;
           box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.3);
           a {

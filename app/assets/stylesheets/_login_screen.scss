@@ -38,8 +38,7 @@
   #login {
     @extend %container_grey;
     background: $grey_lightest;
-    border: 1px solid $grey_lighter;
-    border-radius: 2px;
+    border: 1px solid $grey_lighter; border-radius: 2px;
     padding: 2.5em;
     h2 {
       @extend .h2;
