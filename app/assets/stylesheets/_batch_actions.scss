@@ -26,7 +26,7 @@
         .dropdown_menu_list {
           position: absolute; margin: -.5em 0 0 .5em; padding: .5em 1em; list-style-type: none;
           background: $white;
-          box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: .25em .25em .4em 0 rgba(0, 0, 0, 0.3);
           a {
             @extend %breadcrumb_link;
           }
