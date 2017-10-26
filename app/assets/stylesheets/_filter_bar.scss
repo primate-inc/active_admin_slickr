@@ -5,6 +5,10 @@
 .clear_filters_btn {
   @extend %tab_link;
   text-decoration: none;
+  transition: .2s;
+  &:hover {
+    color: white;
+  }
 }
 #search-status-_sidebar_section {
   display: none;
@@ -50,6 +54,7 @@
       & > select {
         @extend %filter_dropdown;
         margin-right: 1em;
+        cursor: pointer;
         background: $blue;
       }
       input {
@@ -61,6 +66,7 @@
 
         &.datepicker {
           @extend %filter_dropdown;
+          cursor: pointer;
           background: $blue;
 
           &:focus {

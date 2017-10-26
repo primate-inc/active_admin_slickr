@@ -51,7 +51,7 @@
       min-width: 430px;
     }
     a {
-      @extend %breadcrumb_link;
+      @extend %general_link;
     }
   }
 }

@@ -133,17 +133,33 @@
   display: inline-block;
 }
 
+%general_link {
+  @extend .link_style;
 
-%breadcrumb_link {
-  @extend .para_small_style;
-  color: $blue; text-decoration: none;
+  position: relative;
+  color: $blue;
+  text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+  &:before {
+    content: "";
+    position: absolute; width: 100%; height: 1px; bottom: 0; left: 0;
+    background-color: $blue;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
   }
-}
-.breadcrumb_link {
-  @extend %breadcrumb_link;
+  &:hover {
+    color: $blue;
+    text-decoration: none;
+
+    &:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
 }
 
 .nav_header {
@@ -176,17 +192,9 @@
 
 %user_link {
   font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $blue;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 %sign_out_link {
   font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 400; color: $grey;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .user_link {
@@ -282,7 +290,7 @@
     display: inline;
     cursor: pointer;
   }
-  a, .alternative_text {
+  .alternative_text {
     color: $blue;
     text-decoration: none;
 

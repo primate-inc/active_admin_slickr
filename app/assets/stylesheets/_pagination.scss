@@ -4,7 +4,7 @@
       .pagination_information, .download_links {
         @extend .para_small_style;
         display: inline-block;
-        a { @extend %breadcrumb_link; }
+        a { @extend %general_link; }
       }
       .pagination_information, .download_links span {
         color: $grey;
@@ -33,7 +33,7 @@
           }
         }
         .next a, .last a, .prev a, .first a {
-          @extend %breadcrumb_link;
+          @extend %general_link;
         }
       }
     }

@@ -6,7 +6,8 @@
           @extend .para_small_style;
           color: $blue;
           a {
-            @extend %breadcrumb_link;
+            @extend %general_link;
+            text-decoration: none;
           }
           .breadcrumb_sep {
             display: inline-block; margin: 0 6px 0 3px; padding: 2px;

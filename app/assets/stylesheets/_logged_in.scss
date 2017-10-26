@@ -14,6 +14,10 @@
       "sidebar content-main"
       "sidebar footer";
 
+    &.minimise_header {
+      grid-template-columns: [sidebar] 3em [main-content] 100fr
+    }
+
     #header {
       grid-column: sidebar/main-content;
       grid-row: sidebar;
@@ -116,7 +120,7 @@
             @extend %admin_form_basics;
             .actions {
               a {
-                @extend %breadcrumb_link;
+                @extend %general_link;
               }
             }
           }
@@ -129,11 +133,6 @@
       grid-row: footer;
     }
 
-    &.index {
-      #main_content_wrapper {
-        border-top-width: 0;
-      }
-    }
     .formtastic   { padding: 2em; }
 
     .table_tools {
@@ -155,8 +154,14 @@
         margin: 0;
       }
       a {
-        @extend %breadcrumb_link;
+        @extend %general_link;
       }
+    }
+  }
+  &.index {
+    #wrapper #active_admin_content #main_content_wrapper {
+      border-top-width: 0;
+      background-color: $grey_lightest;
     }
   }
 }

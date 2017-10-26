@@ -35,12 +35,7 @@
             @extend .para_small_style;
           }
           & > span { display: inline-block; margin-right: 1em }
-          a {
-            color: $blue; text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
+        
           .active_admin_comment_author {
             @extend .h4;
             margin: .25em 0;
