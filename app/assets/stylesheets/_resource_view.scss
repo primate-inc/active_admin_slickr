@@ -1,10 +1,16 @@
 .logged_in {
+
   .panel {
-    padding: 2em;
+    margin: 2em;
+
     h3 {
       display: none;
     }
+
     .panel_contents {
+      .empty {
+        display: block; padding: 2em 2em 0;
+      }
       table {
         list-style-type: none;
         padding: 0; margin: 0;
@@ -43,6 +49,10 @@
         }
         form { padding: 0; }
       }
+    }
+
+    &.comments {
+      background: $grey_lightest;
     }
   }
 }

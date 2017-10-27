@@ -1,6 +1,9 @@
 .logged_in {
   #wrapper {
     .flash {
+
+    	display: block; position: absolute; bottom: 3.125em; right: 3.125em; 
+
       &_notice {
         background-color: $notice;
         color: white;

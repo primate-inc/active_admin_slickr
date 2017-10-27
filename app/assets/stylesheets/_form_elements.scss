@@ -44,7 +44,7 @@
         }
         textarea {
           @extend %text_input_field;
-          height: 10em;
+          height: 10em; width: 100%;
         }
         .field_with_errors {
           &:nth-child(1) {
@@ -139,7 +139,7 @@
           }
           textarea {
             @extend %text_input_field;
-            height: 10em;
+            height: 10em; width: 100%;
           }
           .hint-text {
             @extend .para_small;
