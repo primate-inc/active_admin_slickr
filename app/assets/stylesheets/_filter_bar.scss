@@ -40,7 +40,7 @@
   .filter_fields {
     grid-column: filters/buttons;
     display: flex;
-    align-items: center;
+    align-items: left;
     flex-wrap: wrap;
     .input {
       display: flex;
