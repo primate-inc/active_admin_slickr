@@ -3,7 +3,10 @@
     .table_actions {
       display: flex;
       justify-content: space-around;
-      a { @extend %general_link; }
+      a {
+        @extend %general_link;
+        margin: 0 0.25em;
+      }
     }
 
     .index_as_table {
@@ -27,29 +30,33 @@
           }
         }
         thead {
-          th {
-            position: relative; padding: .75em .5em;
-            background: $grey_lightest;
-            color: $grey;
-            text-align: left;
-            a {
-              @extend .para_style;
-              position: relative;
-              color: inherit;
-            }
-            &.sortable {
-              a:before, a:after {
-                content: "";
-                position: absolute; display: block; height: 0; width: 0; right: 5px; top: 50%;
-                border: 4px solid transparent;
+          tr {
+            th {
+              position: relative; padding: .75em .5em;
+              background: $grey_lightest;
+              color: $grey;
+              font-weight: 400;
+              text-align: left;
+              white-space: nowrap;
+              a {
+                @extend .para_style;
+                position: relative; margin-right: 1em;
+                color: inherit;
               }
-              a:before {
-                margin-right: -1.2em; margin-top: -.5em;
-                border-bottom-color: #666;
-              }
-              a:after {
-                margin-right: -1.2em; margin-top: .15em;
-                border-top-color: #666;
+              &.sortable {
+                a:before, a:after {
+                  content: "";
+                  position: absolute; display: block; height: 0; width: 0; right: 5px; top: 50%;
+                  border: 4px solid transparent;
+                }
+                a:before {
+                  margin-right: -1.2em; margin-top: -.5em;
+                  border-bottom-color: #666;
+                }
+                a:after {
+                  margin-right: -1.2em; margin-top: .15em;
+                  border-top-color: #666;
+                }
               }
             }
           }
