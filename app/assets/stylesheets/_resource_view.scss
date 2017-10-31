@@ -1,6 +1,6 @@
 .show.logged_in {
 
-  .panel:first-child {
+  .panel:not(:last-child) {
     margin: 2em;
 
     h3 {
