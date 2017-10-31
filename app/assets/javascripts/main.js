@@ -51,4 +51,14 @@ $(function () {
       $('#site_title').show();
     }
   });
+
+  // Hide flash messages after
+  if($(".logged_in .flashes .flash").length) {
+    setTimeout(function() {
+      document.getElementsByClassName('flash')[0].className += " hide";
+    }, 2500);
+    setTimeout(function() {
+      document.getElementsByClassName('flash')[0].remove();
+    }, 3000);
+  }
 });

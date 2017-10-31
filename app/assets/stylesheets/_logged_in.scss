@@ -7,10 +7,9 @@
     display: grid;
     align-content: stretch;
     grid-template-columns: [sidebar] 18em [main-content] 100fr;
-    grid-template-rows: [header] 4em [flash] auto [content] 95fr [footer] 50px;
+    grid-template-rows: [header] 4em [content] 100fr [footer] 50px;
     grid-template-areas:
       "sidebar content-header"
-      "sidebar content-flash"
       "sidebar content-main"
       "sidebar footer";
 
@@ -76,7 +75,7 @@
 
     #title_bar {
       grid-column: main-content;
-      grid-row: header/flash;
+      grid-row: header/content;
       padding: 0 0 0 2em;
       display: grid;
       grid-template-columns: [info] auto [actions] auto;
@@ -91,12 +90,6 @@
         justify-self: right;
         height: 100%;
       }
-    }
-
-    .flash {
-      grid-column: main-content;
-      grid-row: flash/content;
-      padding: 1em 2em;
     }
 
     #active_admin_content {
