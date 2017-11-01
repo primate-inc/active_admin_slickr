@@ -1,11 +1,7 @@
 .show.logged_in {
 
-  .panel:first-child, .panel:not(:last-child) {
+  .panel:not(.comments) {
     margin: 2em;
-
-    h3 {
-      display: none;
-    }
 
     .panel_contents {
       table {
