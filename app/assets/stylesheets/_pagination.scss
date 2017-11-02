@@ -7,11 +7,13 @@
         a { @extend %general_link; }
       }
       .pagination_information, .download_links span {
+        padding-left: 1em;
         color: $grey;
       }
-      .pagination_information {
-        padding-left: 1em;
-        &:after {
+      .pagination_information { padding-left: 1em; }
+      .download_links span { padding-left: 0.5em; }
+      .download_links {
+        &:before {
           content: '|';
           padding: 0 .5em;
         }

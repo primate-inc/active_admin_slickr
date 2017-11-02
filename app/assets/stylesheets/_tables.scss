@@ -28,6 +28,9 @@
               color: $grey_dark;
               @extend .para_style;
             }
+            > td:not(.col-selectable):first-child {
+              padding-left: 1em;
+            }
           }
         }
         thead {
@@ -59,6 +62,9 @@
                   border-top-color: #666;
                 }
               }
+            }
+            > th:not(.col-selectable):first-child {
+              padding-left: 1em;
             }
           }
         }
