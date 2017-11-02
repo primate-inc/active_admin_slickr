@@ -1,0 +1,38 @@
+.logged_in {
+  #wrapper {
+    #active_admin_content {
+      #main_content_wrapper {
+        #main_content {
+          .ui-tabs {
+            .ui-tabs-nav {
+              display: flex;
+              justify-content: flex-start;
+              padding: 0;
+              list-style-type: none;
+              .ui-tabs-tab {
+                a {
+                  @extend %general_link;
+                  display: block; padding: .5em 1em; margin-left: .5em;
+                  background: $grey_lightest;
+                  outline: none !important;
+                }
+                &.ui-tabs-active a {
+                  @extend %general_link;
+                  background: $blue;
+                  color: $white;
+
+                  &:before {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .tab-content {
+              legend { visibility: hidden; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
