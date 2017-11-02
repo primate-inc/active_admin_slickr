@@ -1,5 +1,7 @@
 $(function () {
-  $('#index_table_admin_users').stacktable();
+  var large_break = 1200;
+
+  $('.index .index_table').cardtable();
   /******************************************************************
   // wrapper for filter input fields
   /******************************************************************/
@@ -79,7 +81,7 @@ $(function () {
   }
 
   function windowSizeChecker() {
-    if($( window ).width() > 1200) {
+    if($( window ).width() > large_break) {
       openHamburger();
     } else {
       closeHamburger();
@@ -87,7 +89,7 @@ $(function () {
   }
 
   /******************************************************************
-  // Hide flash messages after
+  // Hide flash messages after certain time
   /******************************************************************/
   if($(".logged_in .flashes .flash").length) {
     setTimeout(function() {
@@ -97,4 +99,18 @@ $(function () {
       document.getElementsByClassName('flash')[0].remove();
     }, 3000);
   }
+
+  /******************************************************************
+  // Tables
+  /******************************************************************/
+  if($( window ).width() <= large_break) {
+    $('.logged_in .index_as_table tbody tr .col-actions').prev().hide();
+  }
+  $(window).bind('resize', function(e) {
+    if($( window ).width() <= large_break) {
+      $('.logged_in .index_as_table tbody tr .col-actions').prev().hide();
+    } else {
+      $('.logged_in .index_as_table tbody tr .col-actions').prev().show();
+    }
+  });
 });

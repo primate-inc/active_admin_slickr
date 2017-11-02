@@ -21,5 +21,10 @@
 @import './utility_nav';
 @import './stackable';
 
+html, body {
+  width: 100%; height: auto; margin: 0px; padding: 0px;
+  overflow-x: hidden;
+}
+
 body { margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
 a { text-decoration: none; }

@@ -19,4 +19,4 @@ $black: #1D1D1D;
   @return '%23' + str-slice('#{$colour}', 2, -1)
 }
 
-$tablet_break: 1200px;
+$large_break: 1200px;
