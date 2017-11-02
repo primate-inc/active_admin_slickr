@@ -2,6 +2,7 @@ $(function () {
   var large_break = 1200;
 
   $('.index .index_table').cardtable();
+
   /******************************************************************
   // wrapper for filter input fields
   /******************************************************************/
@@ -103,7 +104,7 @@ $(function () {
   }
 
   /******************************************************************
-  // Tables
+  // Hide select checkboxes on smaller tables
   /******************************************************************/
   if($( window ).width() <= large_break) {
     $('.logged_in .index_as_table tbody tr .col-actions').prev().hide();
@@ -115,4 +116,14 @@ $(function () {
       $('.logged_in .index_as_table tbody tr .col-actions').prev().show();
     }
   });
+
+  /******************************************************************
+  // Make all filters the same width as the max
+  /******************************************************************/
+  var filterMaxWidth = 0;
+  $('.filter_fields .filter_form_field').each(function() {
+    var itemWidth = $(this)[0].offsetWidth;
+    filterMaxWidth = Math.max(filterMaxWidth, itemWidth)
+  });
+  $('.filter_fields .filter_form_field').css('width', filterMaxWidth);
 });
