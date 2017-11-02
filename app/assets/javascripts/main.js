@@ -42,17 +42,17 @@ $(function () {
   /******************************************************************
   // Add hamburger to header
   /******************************************************************/
-  $('#header').prepend('<div id="hamburger" class="open" />');
+  $('#header').prepend('<div id="open_close" class="open" />');
 
   /******************************************************************
   // Minimise and grow sidebar
   /******************************************************************/
 
-  $('#hamburger').click(function () {
-    if($('#hamburger').hasClass('open')) {
-      closeHamburger();
+  $('#open_close').click(function () {
+    if($('#open_close').hasClass('open')) {
+      closeMenu();
     } else {
-      openHamburger();
+      openMenu();
     }
   });
 
@@ -64,27 +64,29 @@ $(function () {
     windowSizeChecker();
   });
 
-  function closeHamburger() {
+  function closeMenu() {
     $('#wrapper').addClass('minimise_header');
-    $('#hamburger').removeClass('open');
-    $('#hamburger').addClass('closed');
-    $('.tabs').hide();
+    $('#open_close').removeClass('open');
+    $('#open_close').addClass('closed');
+    $('#tabs').hide();
     $('#site_title').hide();
+    $('#utility_nav').hide();
   }
 
-  function openHamburger() {
+  function openMenu() {
     $('#wrapper').removeClass('minimise_header');
-    $('#hamburger').removeClass('closed');
-    $('#hamburger').addClass('open');
-    $('.tabs').show();
+    $('#open_close').removeClass('closed');
+    $('#open_close').addClass('open');
+    $('#tabs').show();
     $('#site_title').show();
+    $('#utility_nav').show();
   }
 
   function windowSizeChecker() {
     if($( window ).width() > large_break) {
-      openHamburger();
+      openMenu();
     } else {
-      closeHamburger();
+      closeMenu();
     }
   }
 

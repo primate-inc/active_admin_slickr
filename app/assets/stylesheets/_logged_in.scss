@@ -23,27 +23,39 @@
       align-self: stretch;
       background: $header;
       display: grid;
-      grid-template-rows: [hamburger] auto [title] auto [account-info] 2em [navigation] 100fr;
+      grid-template-rows: [open-close] auto [title] auto [account-info] 2em [navigation] 100fr;
       padding: .5em 0;
       ul { list-style: none }
 
-      #hamburger {
-        grid-row: hamburger/title;
+      #open_close {
+        grid-row: open-close/title;
         justify-self: right;
-        content: '';
-        margin-right: 1em; margin-top: 1em;
-        z-index: 2;
-        height: 20px;
-        width: 20px;
-        cursor: pointer;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='20px' height='20px' viewBox='0 0 20 20' enable-background='new 0 0 20 20' xml:space='preserve'><rect width='20' height='4' fill='white' /><rect y='16' width='20' height='4' fill='white' /><rect y='8' width='20' height='4' fill='white' /></svg>");
-        background-size: contain;
+        display: inline-block; margin: 0.25em 0.5em 0 0; width: 1.5em; height: 1.5em;
+        border: 0.2em solid white; border-radius: 50%;
+        transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.open:after {
+          content: '';
+        	display: inline-block; margin-top: 0.5em; margin-left: 0.6em; width: 0.3em; height: 0.3em;
+          border-top: 0.2em solid white; border-right: 0.2em solid white;
+          transform: rotate(-135deg);
+        }
+        &.closed:after {
+          content: '';
+        	display: inline-block; margin-top: 0.5em; margin-left: 0.45em; width: 0.3em; height: 0.3em;
+          border-top: 0.2em solid white; border-right: 0.2em solid white;
+          transform: rotate(45deg);
+        }
       }
       #site_title {
         grid-row: title/account-info;
         justify-self: center;
-        width: 100%;
-        margin: 1em 0; padding: 0 1.5em;
+        width: 75%;
+        margin: -1.5em 0 1em -1em;
         box-sizing: border-box;
         font-size: 1em; font-weight: 400;
         color: white;

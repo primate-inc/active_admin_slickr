@@ -18,10 +18,6 @@
                 @extend %general_link;
                 background: $blue;
                 color: $white;
-
-                &:before {
-                  background-color: white;
-                }
               }
             }
           }
