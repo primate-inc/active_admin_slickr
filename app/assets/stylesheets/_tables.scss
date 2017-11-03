@@ -70,6 +70,40 @@
         }
       }
     }
+
+    .index_as_grid {
+      max-width: $large_break; margin: 0 auto;
+
+      .resource_selection_toggle_panel { display: none ;}
+      table {
+        margin: 0.5em 0.5em 0 0.5em;
+        tbody {
+          tr {
+            td {
+              width: 26%; height: 12em;
+              &:first-child {
+                padding-right: 0.25em;
+              }
+              &:last-child {
+                padding-left: 0.25em;
+              }
+              a {
+                img {
+                  width:100%; height:100%; margin-bottom: 0.125em;
+                  object-fit: cover;
+                  opacity: 1;
+                  transition: 0.2s;
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     @include respond-to-less-than($large_break) {
       .index_as_table {
         table {
