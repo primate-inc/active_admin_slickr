@@ -126,4 +126,49 @@ $(function () {
     filterMaxWidth = Math.max(filterMaxWidth, itemWidth)
   });
   $('.filter_fields .filter_form_field').css('width', filterMaxWidth);
+
+  /******************************************************************
+  // Align inputs if filters are all stacked
+  /******************************************************************/
+  var filterStacked = true
+  var offSetLeft
+  var labelMaxWidth = 0
+
+  areFiltersStacked();
+  filterSpacing();
+
+  $(window).bind('resize', function(e) {
+    filterStacked = true
+    var labelMaxWidth = 0
+
+    areFiltersStacked();
+    filterSpacing();
+  });
+
+  function areFiltersStacked() {
+    $('.filter_fields .filter_form_field label').each(function(index) {
+      var itemWidth = $(this)[0].offsetWidth;
+      labelMaxWidth = Math.max(labelMaxWidth, itemWidth);
+
+      if(index === 0) {
+        offSetLeft = $(this)[0].offsetLeft;
+      } else {
+        if($(this)[0].offsetLeft !== offSetLeft) {
+          filterStacked = false;
+        }
+      }
+    });
+  }
+
+  function filterSpacing() {
+    var labelWidth
+    $('.filter_fields .filter_form_field label').each(function() {
+      if(filterStacked) {
+        labelWidth = $(this)[0].offsetWidth;
+        $(this)[0].style.marginRight = (labelMaxWidth - labelWidth + 50) + 'px';
+      } else {
+        $(this)[0].style.marginRight = '1em';
+      }
+    });
+  }
 });
