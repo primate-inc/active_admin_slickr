@@ -50,7 +50,14 @@
       span.empty {
         display: block; padding: 2em 2em 0;
       }
-      form { padding: 0; }
+      form {
+        padding: 0;
+
+        textarea {
+          @extend %text_input_field;
+          background-color: white !important;
+        }
+      }
 
       .active_admin_comment {
         margin-bottom: 1em; padding: 2em 2em 0;

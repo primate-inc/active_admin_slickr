@@ -138,7 +138,7 @@
             @extend %text_input_field;
           }
           textarea {
-            @extend %text_input_field;
+            @extend %admin_text_input_field;
             height: 10em; width: 100%;
           }
           .hint-text {
