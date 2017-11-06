@@ -25,6 +25,11 @@
           }
           td {
             @extend %admin_text_view_field;
+            height: auto;
+
+            img {
+              max-width: 100%;
+            }
           }
         }
       }

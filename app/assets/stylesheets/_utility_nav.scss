@@ -9,15 +9,24 @@
           display: flex;
           align-items: center;
           margin-right: 1em;
+          transition: 0.2s;
           &:before {
             content: ' ';
             display: inline-block; width: 20px; height: 20px; margin-right: .25em; margin-left: -.25em;
             background: image-url("svgs/user.svg") no-repeat;
           }
+          &:hover {
+            color: white;
+          }
         }
       }
       #logout {
         @extend %sign_out_link;
+        transition: 0.2s;
+
+        &:hover {
+          color: white;
+        }
       }
       a {
         color: inherit;
