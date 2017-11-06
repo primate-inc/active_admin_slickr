@@ -15,7 +15,7 @@
 }
 .filter_form {
   display: grid;
-  grid-template-columns: [filters] auto [buttons] 11em;
+  grid-template-columns: [filters] auto [buttons] 13em;
   grid-auto-flow: row;
   .buttons {
     grid-column: buttons;

@@ -23,9 +23,12 @@
 @import './tabs';
 
 html, body {
-  width: 100%; height: auto; margin: 0px; padding: 0px;
-  overflow-x: hidden;
+  width: auto; height: auto; margin: 0px; padding: 0px;
 }
 
-body { margin: 0; padding: 0; font-family: 'Lato', sans-serif;}
+html {
+  position: absolute;
+}
+
+body { position: relative;margin: 0; padding: 0; display: inline-block; font-family: 'Lato', sans-serif;}
 a { text-decoration: none; }
