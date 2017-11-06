@@ -142,8 +142,17 @@
 
     .table_tools {
       display: grid;
-      grid: auto/1fr 1fr;
+      grid-template-columns: 100fr;
+      grid-template-rows: [scopes] auto [bacth-actions] 1fr;
       justify-content: space-between;
+      background-color: $grey_lightest;
+
+      .scopes {
+        grid-row: scopes;
+      }
+      .batch_actions_selector {
+        grid-row: batch-actions;
+      }
     }
 
     #index_footer {

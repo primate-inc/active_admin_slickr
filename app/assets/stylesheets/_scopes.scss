@@ -3,21 +3,25 @@
     #active_admin_content {
       #main_content_wrapper {
         #main_content {
-          .scopes {
-            display: flex;
-            justify-content: flex-end;
-            margin: 0;
-            list-style-type: none;
-            .scope {
-              a {
-                @extend %general_link;
-                background: $white;
-                display: block; padding: .5em 1em; margin-left: .5em;
-              }
-              &.selected a {
-                @extend %general_link;
-                background: $blue;
-                color: $white;
+          .table_tools {
+            .scopes {
+              display: flex; align-items: center; justify-content: center;
+              margin: 0; padding: 0 0 1em;
+              list-style-type: none;
+              .scope {
+                a {
+                  @extend %general_link;
+                  background: $white;
+                  display: block; padding: .5em 1em;
+                }
+                &.selected a {
+                  @extend %general_link;
+                  background: $blue;
+                  color: $white;
+                }
+                &:not(:first-child) {
+                  margin-left: .5em;
+                }
               }
             }
           }

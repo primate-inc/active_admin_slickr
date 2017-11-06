@@ -1,37 +1,41 @@
 .logged_in {
   #wrapper {
-    .table_tools {
-      background-color: $grey_lightest;
-      
-      .batch_actions_selector {
-        align-items: flex-end;
-        position: relative;
-        .dropdown_menu_button {
-          @extend %filter_dropdown;
-          flex: 0 1 6.5em;
-          display: inline-block; padding: .5em 1em; margin: .5em .5em;
-          background: $blue;
-          text-decoration: none;
+    #active_admin_content {
+      #main_content_wrapper {
+        #main_content {
+          .table_tools {
+            .batch_actions_selector {
+              align-items: flex-start;
+              position: relative;
+              .dropdown_menu_button {
+                @extend %filter_dropdown;
+                flex: 0 1 6.5em;
+                display: inline-block; padding: .5em 1em; margin: .5em .5em;
+                background: $blue;
+                text-decoration: none;
 
-          &:hover {
-            background: $blue_dark;
-          }
+                &:hover {
+                  background: $blue_dark;
+                }
 
-          &:after {
-            content: '';
-            display: inline-block; padding: 2px; margin: 0 0 .25em .5em;
-            border: solid white; border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-            vertical-align: middle;
-          }
-        }
-        .dropdown_menu_list {
-          position: absolute; margin: -.5em 0 0 .5em; padding: .5em 1em; list-style-type: none;
-          background: $white;
-          z-index: 1;
-          box-shadow: .25em .25em .4em 0 rgba(0, 0, 0, 0.3);
-          a {
-            @extend %general_link;
+                &:after {
+                  content: '';
+                  display: inline-block; padding: 2px; margin: 0 0 .25em .5em;
+                  border: solid white; border-width: 0 2px 2px 0;
+                  transform: rotate(45deg);
+                  vertical-align: middle;
+                }
+              }
+              .dropdown_menu_list {
+                position: absolute; margin: -.5em 0 0 .5em; padding: .5em 1em; list-style-type: none;
+                background: $white;
+                z-index: 1;
+                box-shadow: .25em .25em .4em 0 rgba(0, 0, 0, 0.3);
+                a {
+                  @extend %general_link;
+                }
+              }
+            }
           }
         }
       }

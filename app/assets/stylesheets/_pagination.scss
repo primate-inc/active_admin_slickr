@@ -20,7 +20,7 @@
       }
       .pagination {
         @extend .para_small_style;
-        margin-bottom: .5em;
+        margin-bottom: .5em; padding-left: 1em;
         .page {
           color: $blue;
           margin-right: .25em;
