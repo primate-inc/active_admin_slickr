@@ -7,6 +7,7 @@
             .batch_actions_selector {
               align-items: flex-start;
               position: relative;
+              display: none;
               .dropdown_menu_button {
                 @extend %filter_dropdown;
                 flex: 0 1 6.5em;
