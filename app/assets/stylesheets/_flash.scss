@@ -1,17 +1,15 @@
 .logged_in {
-  #wrapper {
-    .flash {
-    	display: block; position: fixed; padding: 1em 2em; bottom: 3.125em; right: 3.125em;
-      transition: 500ms;
-      opacity: 1;
+  .flash {
+  	display: block; position: fixed; padding: 1em 2em; bottom: 3.125em; right: 3.125em;
+    transition: 500ms;
+    opacity: 1;
 
-      &_notice {
-        background-color: $notice;
-        color: white;
-      }
-      &.hide {
-        opacity: 0;
-      }
+    &_notice {
+      background-color: $notice;
+      color: white;
+    }
+    &.hide {
+      opacity: 0;
     }
   }
 }

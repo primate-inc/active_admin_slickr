@@ -1,36 +1,34 @@
 .logged_in {
-  #wrapper {
-    #utility_nav {
-      li {
-        display: inline-block;
+  #utility_nav {
+    li {
+      display: inline-block;
 
-        &#current_user {
-          @extend %user_link;
-          display: flex;
-          align-items: center;
-          margin-right: 1em;
-          transition: 0.2s;
-          &:before {
-            content: ' ';
-            display: inline-block; width: 20px; height: 20px; margin-right: .25em; margin-left: -.25em;
-            background: image-url("svgs/user.svg") no-repeat;
-          }
-          &:hover {
-            color: white;
-          }
-        }
-      }
-      #logout {
-        @extend %sign_out_link;
+      &#current_user {
+        @extend %user_link;
+        display: flex;
+        align-items: center;
+        margin-right: 1em;
         transition: 0.2s;
-
+        &:before {
+          content: ' ';
+          display: inline-block; width: 20px; height: 20px; margin-right: .25em; margin-left: -.25em;
+          background: image-url("svgs/user.svg") no-repeat;
+        }
         &:hover {
           color: white;
         }
       }
-      a {
-        color: inherit;
+    }
+    #logout {
+      @extend %sign_out_link;
+      transition: 0.2s;
+
+      &:hover {
+        color: white;
       }
+    }
+    a {
+      color: inherit;
     }
   }
 }

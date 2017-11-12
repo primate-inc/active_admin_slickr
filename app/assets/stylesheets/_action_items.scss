@@ -1,29 +1,25 @@
 .logged_in {
-  #wrapper {
-    #titlebar_right {
-      .action_items {
-        height: 100%;
-        display: flex;
+  #titlebar_right {
+    .action_items {
+      height: 100%;
+      display: flex;
 
-        span.action_item > a, #title_bar .action_items div.action_item {
-          @extend %action_button;
-          display: flex;
-          align-items: center;
-          svg { transition: .2s;  fill: $blue;}
-          &:hover svg { fill: white;}
+      span.action_item > a, #title_bar .action_items div.action_item {
+        @extend %action_button;
+        display: flex;
+        align-items: center;
+        svg { fill: $blue;}
+      }
+      div.action_item {
+        &.active {
+          background: $blue; color: white;
+          svg { fill: white; }
         }
-        div.action_item {
-          &.active {
-            background: $blue; color: white;
-            svg { fill: white; }
-          }
-          &:hover {
-            > svg { fill: white }
-            .arrow svg { fill: white; transform: rotate(180deg) }
-            .arrow:hover svg { fill: white }
-            span svg { fill: $blue }
-            span:hover svg { fill: white }
-          }
+        .arrow svg { transition: .2s; }
+        &:hover {
+          > svg { fill: white }
+          .arrow svg { transform: rotate(180deg) }
+          span svg { fill: $blue }
         }
       }
     }

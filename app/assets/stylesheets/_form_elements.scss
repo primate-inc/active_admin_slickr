@@ -141,21 +141,6 @@
             @extend %admin_text_input_field;
             height: 10em; width: 100%;
           }
-          .hint-text {
-            @extend .para_small;
-            margin: 0; padding: 0 1em;
-            color: $grey;
-          }
-        }
-        &.admin-subtitle {
-          input {
-            font-size: 1.4em;
-          }
-        }
-        &.admin-big-title {
-          input {
-            font-size: 2em; font-weight: bolder;
-          }
         }
         .field_with_errors {
           &:nth-child(1) {

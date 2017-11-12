@@ -1,0 +1,198 @@
+%admin-wrapper {
+  min-height: 100vh;
+  display: grid;
+  align-content: stretch;
+  grid-template-columns: [sidebar] 18em [main-content] 100fr;
+  grid-template-rows: [header] 4em [content] 100fr [footer] 50px;
+  grid-template-areas:
+    "sidebar content-header"
+    "sidebar content-main"
+    "sidebar footer";
+
+  &.minimise_header {
+    grid-template-columns: [sidebar] 3em [main-content] 100fr
+  }
+
+  #header {
+    grid-column: sidebar/main-content;
+    grid-row: sidebar;
+    align-self: stretch;
+    background: $header;
+    display: grid;
+    grid-template-rows: [open-close] auto [title] auto [account-info] 2em [navigation] 100fr;
+    padding: .5em 0;
+    ul { list-style: none }
+
+    #open_close {
+      grid-row: open-close/title;
+      justify-self: right;
+      display: inline-block; margin: 0.5em 0.5em 0 0; width: 2em; height: 2em;
+      border: 0.2em solid white; border-radius: 50%;
+      transition: 0.2s;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.open:after {
+        content: '';
+        display: inline-block; margin-top: 0.55em; margin-left: 0.6em; width: 0.5em; height: 0.5em;
+        border-top: 0.2em solid white; border-right: 0.2em solid white;
+        transform: rotate(-135deg);
+      }
+      &.closed:after {
+        content: '';
+        display: inline-block; margin-top: 0.55em; margin-left: 0.45em; width: 0.5em; height: 0.5em;
+        border-top: 0.2em solid white; border-right: 0.2em solid white;
+        transform: rotate(45deg);
+      }
+    }
+    #site_title {
+      grid-row: title/account-info;
+      justify-self: center;
+      width: 70%;
+      margin: -1.5em 0 1em -2em;
+      box-sizing: border-box;
+      font-size: 1em; font-weight: 400;
+      color: white;
+      img { margin-bottom: 0.5em; width: 100%; }
+    }
+    #utility_nav {
+      grid-row: account-info/navigation;
+      align-self: center;
+      justify-self: center;
+      width: 100%;
+      padding: 0 1.5em;
+      box-sizing: border-box;
+    }
+    #tabs {
+      grid-row: navigation;
+      list-style: none;
+      padding: 2em 0 0; margin: 0;
+      a {
+        @extend %nav_link;
+        padding: .5em 1.5em;
+        display: block;
+      }
+      li.current a {
+        @extend %nav_link_active;
+        padding: .5em 1.5em;
+      }
+    }
+  }
+
+  #title_bar {
+    grid-column: main-content;
+    grid-row: header/content;
+    padding: 0 0 0 2em;
+    display: grid;
+    grid-template-columns: [info] auto [actions] auto;
+
+    #titlebar_left {
+      grid-column: info/actions;
+      justify-self: left;
+      align-self: center;
+    }
+    #titlebar_right {
+      grid-column: actions;
+      justify-self: right;
+      height: 100%;
+    }
+  }
+
+  #active_admin_content {
+    grid-column: main-content;
+    grid-row: content;
+    display: grid;
+    grid-template-rows: [content] 100fr;
+    &.with_sidebar {
+      display: grid;
+      grid-template-rows: [sidebar] auto [content] 100fr;
+    }
+    #main_content_wrapper {
+      grid-row: content;
+      background: white;
+      border-top: $grey_lightest;
+      border-top-width: .1em;
+      border-top-style: solid;
+
+      #main_content {
+        form {
+          @extend %admin_form_basics;
+          .actions {
+            a {
+              @extend %general_link;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footer {
+    grid-column: footer;
+    grid-row: footer;
+  }
+
+  .formtastic   { padding: 2em; }
+
+  .table_tools {
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: [scopes] auto [bacth-actions] 1fr;
+    justify-content: space-between;
+    background-color: $grey_lightest;
+
+    .scopes {
+      grid-row: scopes;
+    }
+    .batch_actions_selector {
+      grid-row: batch-actions;
+    }
+  }
+
+  #index_footer {
+    @extend .para_small_style;
+    padding: 1em 0;
+    background-color: $grey_lightest;
+  }
+
+  #footer {
+    padding: 1em;
+    p {
+      @extend .para_small;
+      margin: 0;
+    }
+    a {
+      @extend %general_link;
+    }
+  }
+}
+
+%breadcrumbs {
+  .breadcrumb {
+    @extend .para_small_style;
+    color: $blue;
+    a {
+      @extend %general_link;
+      text-decoration: none;
+    }
+    .breadcrumb_sep {
+      display: inline-block; margin: 0 6px 0 3px; padding: 2px;
+      font-size: 0;
+      border: solid $blue; border-width: 0 2px 2px 0;
+      transform: rotate(-45deg);
+      vertical-align: middle;
+
+    }
+  }
+  h2 {
+    @extend .para_small_style;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .breadcrumb #page_title {
+    @extend .h1;
+    margin: 0;
+  }
+}

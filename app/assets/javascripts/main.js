@@ -65,7 +65,7 @@ $(function () {
   });
 
   function closeMenu() {
-    $('#wrapper').addClass('minimise_header');
+    $('#wrapper, #custom-wrapper').addClass('minimise_header');
     $('#open_close').removeClass('open');
     $('#open_close').addClass('closed');
     $('#tabs').hide();
@@ -74,7 +74,7 @@ $(function () {
   }
 
   function openMenu() {
-    $('#wrapper').removeClass('minimise_header');
+    $('#wrapper, #custom-wrapper').removeClass('minimise_header');
     $('#open_close').removeClass('closed');
     $('#open_close').addClass('open');
     $('#tabs').show();

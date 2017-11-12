@@ -4,6 +4,7 @@
 @import './fonts';
 @import './responsive';
 @import './elements';
+@import './blocks';
 @import './form_elements';
 @import './login_screen';
 @import './logged_in';
@@ -28,7 +29,17 @@ html, body {
 
 html {
   position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body { position: relative;margin: 0; padding: 0; display: inline-block; font-family: 'Lato', sans-serif;}
+
 a { text-decoration: none; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
