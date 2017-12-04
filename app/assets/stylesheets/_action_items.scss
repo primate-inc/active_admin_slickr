@@ -15,7 +15,10 @@
           background: $blue; color: white;
           svg { fill: white; }
         }
-        .arrow svg { transition: .2s; }
+        .arrow {
+          padding-right: 1.2em;
+          svg { transition: .2s; }
+        }
         &:hover {
           > svg { fill: white }
           .arrow svg { transform: rotate(180deg) }
