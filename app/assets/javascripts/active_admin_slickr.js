@@ -1,2 +1,2 @@
-//= require main
-//= require stackable
+//= require slickr_main.js
+//= require stackable.js
