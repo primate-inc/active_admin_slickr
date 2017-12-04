@@ -121,7 +121,7 @@
             @extend %label;
           }
         }
-        &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone {
+        &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone, &.country, &.input {
           & > label {
             width: 100%;
           }
