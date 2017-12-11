@@ -1,29 +1,41 @@
 %admin-wrapper {
-  min-height: 100vh;
-  display: grid;
+  display: -ms-grid; display: grid;
+  -ms-grid-column-align: stretch; -ms-grid-row-align: stretch;
   align-content: stretch;
+  -ms-grid-columns: 18em 100fr;
+  -ms-grid-rows: 4em 100fr 50px;
   grid-template-columns: [sidebar] 18em [main-content] 100fr;
   grid-template-rows: [header] 4em [content] 100fr [footer] 50px;
   grid-template-areas:
     "sidebar content-header"
     "sidebar content-main"
     "sidebar footer";
+  min-height: 100%;
+  height: 100vh;
 
   &.minimise_header {
-    grid-template-columns: [sidebar] 3em [main-content] 100fr
+    -ms-grid-columns: 3em 100fr;
+    grid-template-columns: [sidebar] 3em [main-content] 100fr;
   }
 
   #header {
+    display: -ms-grid; display: grid;
+    -ms-grid-row: 1; -ms-grid-column: 1; -ms-grid-row-span: 3;
     grid-column: sidebar/main-content;
     grid-row: sidebar;
     align-self: stretch;
-    background: $header;
-    display: grid;
+
+    -ms-grid-rows: auto auto 2em 100fr;
     grid-template-rows: [open-close] auto [title] auto [account-info] 2em [navigation] 100fr;
+    
     padding: .5em 0;
+    background: $header;
+    
     ul { list-style: none }
 
     #open_close {
+      -ms-grid-row: 1; 
+      -ms-grid-column-align: end;
       grid-row: open-close/title;
       justify-self: right;
       display: inline-block; margin: 0.5em 0.5em 0 0; width: 2em; height: 2em;
@@ -48,6 +60,8 @@
       }
     }
     #site_title {
+      -ms-grid-row: 2;  
+      -ms-grid-column-align: center;
       grid-row: title/account-info;
       justify-self: center;
       width: 70%;
@@ -58,6 +72,8 @@
       img { margin-bottom: 0.5em; width: 100%; }
     }
     #utility_nav {
+      -ms-grid-row: 3; 
+      -ms-grid-column-align: center;
       grid-row: account-info/navigation;
       align-self: center;
       justify-self: center;
@@ -66,6 +82,7 @@
       box-sizing: border-box;
     }
     #tabs {
+      -ms-grid-row: 3;
       grid-row: navigation;
       list-style: none;
       padding: 2em 0 0; margin: 0;
@@ -82,34 +99,45 @@
   }
 
   #title_bar {
+    display: -ms-grid; display: grid;
+    -ms-grid-row: 1; -ms-grid-column: 2; -ms-grid-column-span: 1; -ms-grid-row-span: 1;
     grid-column: main-content;
     grid-row: header/content;
     padding: 0 0 0 2em;
-    display: grid;
+    
+    -ms-grid-columns: auto auto;
     grid-template-columns: [info] auto [actions] auto;
 
     #titlebar_left {
+      -ms-grid-column: 1;
       grid-column: info/actions;
-      justify-self: left;
+      -ms-grid-column-align: left; justify-self: left;
       align-self: center;
     }
     #titlebar_right {
+      -ms-grid-column: 2;
       grid-column: actions;
-      justify-self: right;
+      -ms-grid-column-align: right; justify-self: right;
       height: 100%;
     }
   }
 
   #active_admin_content {
+    display: -ms-grid; display: grid;
+    -ms-grid-row: 2; -ms-grid-column: 2; -ms-grid-row-span: 1;
     grid-column: main-content;
     grid-row: content;
-    display: grid;
+
+    -ms-grid-rows: 100fr;
     grid-template-rows: [content] 100fr;
+
     &.with_sidebar {
-      display: grid;
+      display: -ms-grid; display: grid;
+      -ms-grid-rows: auto 100fr;
       grid-template-rows: [sidebar] auto [content] 100fr;
     }
     #main_content_wrapper {
+      -ms-grid-row: 1;
       grid-row: content;
       background: white;
       border-top: $grey_lightest;
@@ -130,6 +158,7 @@
   }
 
   #footer {
+    -ms-grid-row: 3; -ms-grid-column: 2; -ms-grid-column-span: 1;
     grid-column: footer;
     grid-row: footer;
   }
@@ -137,7 +166,9 @@
   .formtastic   { padding: 2em; }
 
   .table_tools {
-    display: grid;
+    display: -ms-grid; display: grid;
+    -ms-grid-columns: 100fr;
+    -ms-grid-rows: auto 1fr;
     grid-template-columns: 100fr;
     grid-template-rows: [scopes] auto [bacth-actions] 1fr;
     justify-content: space-between;
