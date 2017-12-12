@@ -10,8 +10,8 @@
     "sidebar content-header"
     "sidebar content-main"
     "sidebar footer";
-  min-height: 100%;
-  height: 100vh;
+  
+  min-height: 100vh;
 
   &.minimise_header {
     -ms-grid-columns: 3em 100fr;
@@ -105,14 +105,14 @@
     grid-row: header/content;
     padding: 0 0 0 2em;
     
-    -ms-grid-columns: auto auto;
+    -ms-grid-columns: 2fr 1fr; -ms-grid-rows: 1fr;
     grid-template-columns: [info] auto [actions] auto;
 
     #titlebar_left {
       -ms-grid-column: 1;
       grid-column: info/actions;
       -ms-grid-column-align: left; justify-self: left;
-      align-self: center;
+      -ms-grid-row-align: center; align-self: center;
     }
     #titlebar_right {
       -ms-grid-column: 2;
@@ -128,13 +128,20 @@
     grid-column: main-content;
     grid-row: content;
 
-    -ms-grid-rows: 100fr;
+    -ms-grid-rows: 100fr; -ms-grid-columns: 100fr;
     grid-template-rows: [content] 100fr;
 
     &.with_sidebar {
       display: -ms-grid; display: grid;
       -ms-grid-rows: auto 100fr;
       grid-template-rows: [sidebar] auto [content] 100fr;
+
+      #main_content_wrapper {
+        -ms-grid-row: 2;
+      }
+      #sidebar {
+        -ms-grid-row: 1;
+      }
     }
     #main_content_wrapper {
       -ms-grid-row: 1;

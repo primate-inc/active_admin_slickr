@@ -14,10 +14,12 @@
   display: none;
 }
 .filter_form {
-  display: grid;
+  display: -ms-grid; display: grid;
+  -ms-grid-columns: auto 13em;
   grid-template-columns: [filters] auto [buttons] 13em;
   grid-auto-flow: row;
   .buttons {
+    -ms-grid-column: 2;
     grid-column: buttons;
     display: flex;
     justify-content: flex-end;
@@ -38,6 +40,7 @@
     }
   }
   .filter_fields {
+    -ms-grid-column: 1;
     grid-column: filters/buttons;
     display: flex;
     align-items: left;
