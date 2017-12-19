@@ -15,15 +15,16 @@
 }
 .filter_form {
   display: -ms-grid; display: grid;
-  -ms-grid-columns: auto 13em;
-  grid-template-columns: [filters] auto [buttons] 13em;
+  -ms-grid-columns: auto 12em;
+  grid-template-columns: [filters] auto [buttons] 12em;
   grid-auto-flow: row;
   .buttons {
     -ms-grid-column: 2;
+    padding: 0.5em 1em;
     grid-column: buttons;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: start;
+    align-items: baseline;
   }
 
   input[type="submit"] {
@@ -45,23 +46,27 @@
     display: flex;
     align-items: left;
     flex-wrap: wrap;
+    justify-content: space-between;
     .input {
       display: flex;
       padding: 0.5em;
       align-items: center;
+      flex: 0 0 49%;
 
       label {
+        flex: 0 0 7em;
         @extend %filter_label;
         margin-right: 1em;
-        white-space:nowrap;
+        white-space: pre-wrap;
       }
       & > select {
         @extend %filter_dropdown;
-        margin-right: 1em;
+        flex: 1;
         cursor: pointer;
         background: $blue;
       }
       input {
+        flex: 1 1 50%;
         @extend %filter_field;
 
         &:nth-of-type(2) {

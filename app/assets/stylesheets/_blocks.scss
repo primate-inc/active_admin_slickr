@@ -91,7 +91,7 @@
         padding: .5em 1.5em;
         display: block;
       }
-      li.current a {
+      li.current > a {
         @extend %nav_link_active;
         padding: .5em 1.5em;
       }
