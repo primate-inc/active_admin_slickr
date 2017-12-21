@@ -64,12 +64,12 @@
       -ms-grid-column-align: center;
       grid-row: title/account-info;
       justify-self: center;
-      width: 70%;
+      max-width: 70%;
       margin: -1.5em 0 1em -2em;
       box-sizing: border-box;
       font-size: 1em; font-weight: 400;
       color: white;
-      img { margin-bottom: 0.5em; width: 100%; }
+      img { margin-bottom: 1em; width: 100%; }
     }
     #utility_nav {
       -ms-grid-row: 3;
