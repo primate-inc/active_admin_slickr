@@ -242,9 +242,26 @@
 .tab_link {
   @extend %tab_link;
 }
+
 %blue_section {
   background: $blue;
   padding: 0.5em 2em;
+}
+
+%index_list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+%index_list__item {
+  background: white;
+  border-bottom: 1px solid $grey_lighter;
+}
+%index_list__item-header {
+  padding: .75em .65em;
+}
+%index_list__item-content {
+  padding: .75em .65em;
 }
 
 %action-button-alt {
