@@ -258,10 +258,10 @@
   border-bottom: 1px solid $grey_lighter;
 }
 %index_list__item-header {
-  padding: .75em .65em;
+  padding: .75em 1em;
 }
 %index_list__item-content {
-  padding: .75em .65em;
+  padding: .75em 1em;
 }
 
 %action-button-alt {
@@ -321,4 +321,21 @@
 }
 .svg-icon {
   fill: $blue;
+}
+
+%open-close-icon {
+  border: 0.2em solid white; border-radius: 50%;
+  transition: 0.2s;
+  &.open:after {
+    content: '';
+    display: inline-block; margin-top: 0.55em; margin-left: 0.6em; width: 0.5em; height: 0.5em;
+    border-top: 0.2em solid white; border-right: 0.2em solid white;
+    transform: rotate(-135deg);
+  }
+  &.closed:after {
+    content: '';
+    display: inline-block; margin-top: 0.55em; margin-left: 0.45em; width: 0.5em; height: 0.5em;
+    border-top: 0.2em solid white; border-right: 0.2em solid white;
+    transform: rotate(45deg);
+  }
 }

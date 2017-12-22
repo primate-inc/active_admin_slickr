@@ -34,29 +34,15 @@
     ul { list-style: none }
 
     #open_close {
+      @extend %open-close-icon;
       -ms-grid-row: 1; 
       -ms-grid-column-align: end;
       grid-row: open-close/title;
       justify-self: right;
       display: inline-block; margin: 0.5em 0.5em 0 0; width: 2em; height: 2em;
-      border: 0.2em solid white; border-radius: 50%;
-      transition: 0.2s;
 
       &:hover {
         cursor: pointer;
-      }
-
-      &.open:after {
-        content: '';
-        display: inline-block; margin-top: 0.55em; margin-left: 0.6em; width: 0.5em; height: 0.5em;
-        border-top: 0.2em solid white; border-right: 0.2em solid white;
-        transform: rotate(-135deg);
-      }
-      &.closed:after {
-        content: '';
-        display: inline-block; margin-top: 0.55em; margin-left: 0.45em; width: 0.5em; height: 0.5em;
-        border-top: 0.2em solid white; border-right: 0.2em solid white;
-        transform: rotate(45deg);
       }
     }
     #site_title {
@@ -141,6 +127,8 @@
       }
       #sidebar {
         -ms-grid-row: 1;
+        display: flex;
+        width: 100%;
       }
     }
     #main_content_wrapper {
