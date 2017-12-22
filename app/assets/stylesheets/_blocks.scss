@@ -10,7 +10,7 @@
     "sidebar content-header"
     "sidebar content-main"
     "sidebar footer";
-  
+
   min-height: 100vh;
 
   &.minimise_header {
@@ -27,15 +27,15 @@
 
     -ms-grid-rows: auto auto 2em 100fr;
     grid-template-rows: [open-close] auto [title] auto [account-info] 2em [navigation] 100fr;
-    
+
     padding: .5em 0;
     background: $header;
-    
+
     ul { list-style: none }
 
     #open_close {
       @extend %open-close-icon;
-      -ms-grid-row: 1; 
+      -ms-grid-row: 1;
       -ms-grid-column-align: end;
       grid-row: open-close/title;
       justify-self: right;
@@ -46,19 +46,19 @@
       }
     }
     #site_title {
-      -ms-grid-row: 2;  
+      -ms-grid-row: 2;
       -ms-grid-column-align: center;
       grid-row: title/account-info;
       justify-self: center;
-      width: 70%;
+      max-width: 70%;
       margin: -1.5em 0 1em -2em;
       box-sizing: border-box;
       font-size: 1em; font-weight: 400;
       color: white;
-      img { margin-bottom: 0.5em; width: 100%; }
+      img { margin-bottom: 1em; width: 100%; }
     }
     #utility_nav {
-      -ms-grid-row: 3; 
+      -ms-grid-row: 3;
       -ms-grid-column-align: center;
       grid-row: account-info/navigation;
       align-self: center;
@@ -77,9 +77,58 @@
         padding: .5em 1.5em;
         display: block;
       }
-      li.current > a {
-        @extend %nav_link_active;
-        padding: .5em 1.5em;
+      li {
+        &.has_nested {
+          > a {
+            &:after {
+              content: '';
+              display: inline-block; right: 0; margin-left: 10px; padding: 2px;
+              font-size: 0;
+              border: solid $white; border-width: 0 2px 2px 0;
+              transform: rotate(-135deg); transition: 0.2s;
+              vertical-align: middle;
+            }
+          }
+          &:hover {
+            > a {
+              &:after {
+                transform: rotate(45deg);
+              }
+            }
+            ul {
+              max-height: 300px;
+              transition: max-height 0.2s;
+            }
+          }
+        }
+        &.has_nested.current {
+          ul {
+            max-height: 300px;
+            transition: max-height 0.2s;
+          }
+          > a {
+            &:after {
+              border: solid $blue; border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+        &.current {
+          > a {
+            @extend %nav_link_active;
+          }
+        }
+        ul {
+          max-height: 0; padding: 0;
+          transition: max-height 0.2s;
+          overflow: hidden;
+
+          li {
+            a{
+              padding-left: 3em !important;
+            }
+          }
+        }
       }
     }
   }
@@ -90,7 +139,7 @@
     grid-column: main-content;
     grid-row: header/content;
     padding: 0 0 0 2em;
-    
+
     -ms-grid-columns: 2fr 1fr; -ms-grid-rows: 1fr;
     grid-template-columns: [info] auto [actions] auto;
 
