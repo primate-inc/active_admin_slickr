@@ -115,19 +115,21 @@
             }
           }
         }
-        &.current {
+        &.has_nested.current {
           ul {
             max-height: 300px;
             transition: max-height 0.2s;
           }
           > a {
-            @extend %nav_link_active;
-            padding: .5em 1.5em;
-
             &:after {
               border: solid $blue; border-width: 0 2px 2px 0;
               transform: rotate(45deg);
             }
+          }
+        }
+        &.current {
+          > a {
+            @extend %nav_link_active;
           }
         }
         ul {
