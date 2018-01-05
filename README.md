@@ -14,25 +14,46 @@ gem 'active_admin_slickr'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install active_admin_slickr
+```bash
+gem install active_admin_slickr
+```
 
-## Usage
+## Stylesheets
 
-- In the `active_admin.scss` file, you include `active_admin_slickr`. **Note: You have to comment the active admin stylesheets.**
+Firstly, please comment out the default Active Admin stylesheets.
 
 ```css
 // Active Admin's got SASS!
 // @import "active_admin/mixins";
 // @import "active_admin/base";
-
-// Active Bootstrap
-@import 'active_admin_slickr';
 ```
 
+### Option 1
+
+If you wish to be able to extend the stylesheets from the active_admin_slickr gem,
+add the following in `active_admin.scss`:
+
+```css
+@import 'active_admin_slickr_sass';
+```
+
+### Option 2
+
+If you will not be making any extensions to the active_admin_slickr gem, add the
+
+following in `active_admin.scss`:
+
+```css
+@import 'active_admin_slickr_postcss';
+```
+
+## Javascript
 - In the `active_admin.js` file, you require `active_admin_slickr`.
 
 ```javascript
@@ -42,6 +63,16 @@ Or install it yourself as:
 ```
 
 ## Development
+
+### Webpack
+
+```bash
+npm run watch
+```
+
+Stylesheets will be watched and compiled by webpack with each change.
+
+### Install
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 

@@ -4,7 +4,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    application: ["./app/assets/stylesheets/main.scss"]
+    application: ["./app/assets/stylesheets/active_admin_slickr_sass.scss"]
+  },
+
+  devServer: {
+    contentBase: './assets/stylesheets'
   },
 
   output: {
@@ -29,7 +33,7 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin({
-      filename: 'app/assets/stylesheets/active_admin_slickr.scss'
+      filename: 'app/assets/stylesheets/active_admin_slickr_postcss.scss'
     })
   ]
 };
