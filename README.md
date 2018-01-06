@@ -34,23 +34,10 @@ Firstly, please comment out the default Active Admin stylesheets.
 // @import "active_admin/base";
 ```
 
-### Option 1
-
-If you wish to be able to extend the stylesheets from the active_admin_slickr gem,
-add the following in `active_admin.scss`:
+Then add the following in `active_admin.scss`:
 
 ```css
-@import 'active_admin_slickr_sass';
-```
-
-### Option 2
-
-If you will not be making any extensions to the active_admin_slickr gem, add the
-
-following in `active_admin.scss`:
-
-```css
-@import 'active_admin_slickr_postcss';
+@import 'active_admin_slickr';
 ```
 
 ## Javascript
@@ -70,7 +57,9 @@ following in `active_admin.scss`:
 npm run watch
 ```
 
-Stylesheets will be watched and compiled by webpack with each change.
+Stylesheets in `stylesheets/files_to_edit` will be watched and compiled by webpack
+into `webpack_output`. Only make edits to the files in `files_to_edit` and webpack
+will automatically output to `webpack_output` after using the PostCSS loader.
 
 ### Install
 

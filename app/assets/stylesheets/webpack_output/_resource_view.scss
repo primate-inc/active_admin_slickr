@@ -1,0 +1,122 @@
+.show.logged_in {
+
+  .panel:not(.comments) {
+    margin: 2em;
+
+    .panel_contents {
+      .panel {
+        margin-bottom: 0;
+      }
+
+      .attributes_table, .panel {
+        table {
+          list-style-type: none;
+          padding: 0; margin: 0;
+          cursor: default;
+          tr {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-flow: column;
+                    flex-flow: column;
+            margin-bottom: 1.5em;
+          }
+          th {
+            @extend %label;
+            text-align: left;
+          }
+          td {
+            @extend %admin_text_view_field;
+            height: auto;
+
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comments.panel {
+    margin: 2em;
+    background: $grey_lightest;
+
+    h3 {
+      @extend .subtitle;
+      padding: 2em 0 0 2em; margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .panel_contents {
+      span.empty {
+        display: block; padding: 2em 2em 0;
+      }
+      form {
+        padding: 0;
+
+        textarea {
+          @extend %text_input_field;
+          background-color: white !important;
+        }
+      }
+
+      .active_admin_comment {
+        margin-bottom: 1em; padding: 2em 2em 0;
+        border-bottom: none;
+        p { margin: .75em 0; }
+
+        .active_admin_comment_meta > span, .active_admin_comment_meta > a {
+
+          @extend .para_small_style;
+        }
+
+        .active_admin_comment_meta > span {
+          display: inline-block;
+          margin-right: 1em;
+        }
+
+        .active_admin_comment_meta {
+
+          .active_admin_comment_author {
+            @extend .h4;
+            margin: .25em 0;
+
+            a {
+              color: $blue;
+              -webkit-transition: 0.2s;
+              transition: 0.2s
+            }
+
+            a:hover {
+              color: $blue_dark;
+            }
+          }
+
+          span {
+            @extend %admin_text_view_field;
+            padding-left: 0;
+          }
+
+          span + a {
+            @extend %general_link;
+          }
+
+          .active_admin_comment_body {
+            @extend .para;
+          }
+        }
+      }
+      .pagination_information {
+        @extend .para_small_style;
+        padding: 2em 0 0 2em;
+        color: $grey;
+      }
+    }
+  }
+}

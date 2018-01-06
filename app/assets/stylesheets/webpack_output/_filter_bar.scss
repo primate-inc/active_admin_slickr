@@ -1,0 +1,116 @@
+#filters_sidebar_section {
+  @extend %blue_section;
+  h3 { display: none; }
+}
+.clear_filters_btn {
+  @extend %tab_link;
+  text-decoration: none;
+  -webkit-transition: .2s;
+  transition: .2s
+}
+.clear_filters_btn:hover { color: white;
+}
+#search-status-_sidebar_section {
+  display: none;
+}
+.filter_form {
+  display: -ms-grid; display: grid;
+  -ms-grid-columns: auto 12em;
+  grid-template-columns: [filters] auto [buttons] 12em;
+  grid-auto-flow: row;
+  .buttons {
+    -ms-grid-column: 2;
+    padding: 0.5em 1em;
+    grid-column: buttons;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+
+  input[type="submit"] {
+    @extend %small_button;
+    padding: 8px 12px; margin-right: 1em;
+    color: white; border: none; background: $blue_dark
+  }
+
+  input[type="submit"]:hover { background: darken($blue_dark, 10%);
+  }
+
+  input[type="submit"]:before { content: ' '; display: inline-block; width: 20px; height: 20px; margin-right: .25em; background: image-url('svgs/tick.svg') no-repeat;
+  }
+  .filter_fields {
+    -ms-grid-column: 1;
+    grid-column: filters/buttons;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    .input {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0.5em;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 49%;
+              flex: 0 1 49%;
+      select + input {
+        margin-left: 1em;
+      }
+
+      label {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 7em;
+                flex: 0 0 7em;
+        @extend %filter_label;
+        margin-right: 1em;
+        white-space: pre-wrap;
+      }
+    }
+    .input > select {
+      @extend %filter_dropdown; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; cursor: pointer; background: $blue;
+    }
+    .input {
+      input {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
+        @extend %filter_field;
+      }
+      input:nth-of-type(2) { margin-left: 0.5em;
+      }
+      input.datepicker {
+        @extend %filter_dropdown; cursor: pointer; background: $blue;
+      }
+      input.datepicker:focus { border-color: white; color: white;
+      }
+      input::-webkit-input-placeholder {
+        color: white;
+      }
+      input:-ms-input-placeholder {
+        color: white;
+      }
+      input::-ms-input-placeholder {
+        color: white;
+      }
+      input::placeholder {
+        color: white;
+      }
+    }
+  }
+}

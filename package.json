@@ -5,13 +5,13 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.7.2",
-    "postcss-loader": "^2.0.9",
-    "sass-loader": "^6.0.6",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.10",
+    "postcss-scss": "^1.0.3",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-clean": "^1.0.0"
   },
   "dependencies": {
     "webpack-dev-server": "^2.9.7"

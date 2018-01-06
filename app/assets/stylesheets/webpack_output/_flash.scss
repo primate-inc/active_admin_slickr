@@ -1,0 +1,16 @@
+.logged_in {
+  .flash {
+  	display: block; position: fixed; padding: 1em 2em; bottom: 3.125em; right: 3.125em;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    opacity: 1;
+
+    &_notice {
+      background-color: $notice;
+      color: white;
+    }
+  }
+  .flash.hide {
+    opacity: 0;
+  }
+}

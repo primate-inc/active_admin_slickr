@@ -1,0 +1,34 @@
+.logged_in {
+  #wrapper {
+    #active_admin_content {
+      #main_content_wrapper {
+        #main_content {
+          .table_tools {
+            .scopes {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+              margin: 0; padding: 0 0 1em;
+              list-style-type: none;
+              .scope {
+                a {
+                  @extend %general_link;
+                  background: $white;
+                  display: block; padding: .5em 1em;
+                }
+              }
+              .scope.selected a {
+                @extend %general_link;
+                background: $blue;
+                color: $white;
+              }
+              .scope:not(:first-child) {
+                margin-left: .5em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

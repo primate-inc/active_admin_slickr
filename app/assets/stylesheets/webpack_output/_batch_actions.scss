@@ -1,0 +1,52 @@
+.logged_in {
+  #wrapper {
+    #active_admin_content {
+      #main_content_wrapper {
+        #main_content {
+          .table_tools {
+            .batch_actions_selector {
+              -webkit-box-align: start;
+                  -ms-flex-align: start;
+                      align-items: flex-start;
+              position: relative;
+              display: none;
+              .dropdown_menu_button {
+                @extend %filter_dropdown;
+                -webkit-box-flex: 0;
+                    -ms-flex: 0 1 6.5em;
+                        flex: 0 1 6.5em;
+                display: inline-block; padding: .5em 1em; margin: .5em .5em;
+                background: $blue;
+                text-decoration: none
+              }
+              .dropdown_menu_button:hover {
+                background: $blue_dark;
+              }
+              .dropdown_menu_button:after {
+                content: '';
+                display: inline-block;
+                padding: 2px;
+                margin: 0 0 .25em .5em;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                vertical-align: middle;
+              }
+              .dropdown_menu_list {
+                position: absolute; margin: -.5em 0 0 .5em; padding: .5em 1em; list-style-type: none;
+                background: $white;
+                z-index: 1;
+                -webkit-box-shadow: .25em .25em .4em 0 rgba(0, 0, 0, .3);
+                        box-shadow: .25em .25em .4em 0 rgba(0, 0, 0, .3);
+                a {
+                  @extend %general_link;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
