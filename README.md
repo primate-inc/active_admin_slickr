@@ -49,6 +49,16 @@ Then add the following in `active_admin.scss`:
 //= require active_admin_slickr
 ```
 
+## Additions to Active Admin
+
+### Time picker styles
+
+The new style can be used within a form like so:
+
+```ruby
+f.input :time, as: :time_picker, wrapper_html: { class: 'clockpicker', 'data-autoclose': 'true' }
+```
+
 ## Development
 
 ### Webpack
