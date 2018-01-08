@@ -69,8 +69,10 @@
       -webkit-box-flex: 0;
           -ms-flex: 0 1 49%;
               flex: 0 1 49%;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
       select + input {
-        margin-left: 1em;
+        margin-right: 1em; margin-bottom: 0.5em;
       }
 
       label {
@@ -78,24 +80,25 @@
             -ms-flex: 0 0 7em;
                 flex: 0 0 7em;
         @extend %filter_label;
-        margin-right: 1em;
+        margin-right: 1em; margin-bottom: 0.5em;
         white-space: pre-wrap;
       }
     }
     .input > select {
-      @extend %filter_dropdown; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; cursor: pointer; background: $blue;
+      @extend %filter_dropdown; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; margin-right: 1em; margin-bottom: 0.5em; cursor: pointer; background: $blue;
     }
     .input {
       input {
         -webkit-box-flex: 1;
             -ms-flex: 1 1 50%;
                 flex: 1 1 50%;
+        margin-bottom: 0.5em;
         @extend %filter_field;
       }
       input:nth-of-type(2) { margin-left: 0.5em;
       }
       input.datepicker {
-        @extend %filter_dropdown; cursor: pointer; background: $blue;
+        @extend %filter_dropdown; margin-left: 0; cursor: pointer; background: $blue;
       }
       input.datepicker:focus { border-color: white; color: white;
       }
