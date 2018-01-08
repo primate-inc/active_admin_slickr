@@ -140,6 +140,7 @@ $(function () {
 
   areFiltersStacked();
   filterSpacing();
+  dateRangeWidth();
 
   $(window).bind('resize', function(e) {
     filtersStacked = true
@@ -147,6 +148,7 @@ $(function () {
 
     areFiltersStacked();
     filterSpacing();
+    dateRangeWidth();
   });
 
   // True if filters in single column
@@ -175,5 +177,14 @@ $(function () {
         $(this)[0].style.marginRight = '1em';
       }
     });
+  }
+
+  function dateRangeWidth() {
+    setTimeout(function(){
+      $('.filter_fields .filter_form_field.date_range').each(function() {
+        var firstDatepickerWidth = $(this).children('input.datepicker').first().innerWidth();
+        $(this).children('input.datepicker').eq(1).css('max-width', (firstDatepickerWidth + 2) + 'px');
+      });
+    },50);
   }
 });
