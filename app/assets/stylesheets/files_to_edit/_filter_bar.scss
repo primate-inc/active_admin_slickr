@@ -52,24 +52,27 @@
       padding: 0.5em;
       align-items: center;
       flex: 0 1 49%;
+      flex-wrap: wrap;
       select + input {
-        margin-left: 1em;
+        margin-right: 1em; margin-bottom: 0.5em;
       }
 
       label {
         flex: 0 0 7em;
         @extend %filter_label;
-        margin-right: 1em;
+        margin-right: 1em; margin-bottom: 0.5em;
         white-space: pre-wrap;
       }
       & > select {
         @extend %filter_dropdown;
-        flex: 1;
+        flex: 1 1 49%;
+        margin-right: 1em; margin-bottom: 0.5em;
         cursor: pointer;
         background: $blue;
       }
       input {
         flex: 1 1 50%;
+        margin-bottom: 0.5em;
         @extend %filter_field;
 
         &:nth-of-type(2) {
@@ -77,6 +80,7 @@
         }
         &.datepicker {
           @extend %filter_dropdown;
+          margin-left: auto; margin-right: 1em;
           cursor: pointer;
           background: $blue;
 

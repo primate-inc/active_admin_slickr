@@ -1,0 +1,116 @@
+.ui-datepicker {
+  display: inline-block; width: 330px; padding: 12px 15px; margin-top: 3px;
+  border-radius: 3px; border: 1px solid $grey_lighter;
+  background-color: white; -webkit-box-shadow: 0.25em 0.25em 0.4em 0 rgba(0, 0, 0, .3); box-shadow: 0.25em 0.25em 0.4em 0 rgba(0, 0, 0, .3);
+
+  table {
+    width: 100%;
+    border-collapse: collapse; border-spacing: 0;
+    table-layout: fixed;
+  }
+  td {
+    padding: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    color: $grey_lighter;
+    border: 1px solid $grey_lighter;
+  }
+  thead td, thead th {
+    color: #1385e5;
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase;
+  }
+  tbody td {
+    a {
+      color: #666;
+    }
+  }
+  tbody td:hover {
+    border-color: #1385e5;
+    background: #1385e5;
+
+    a {
+        color: #fff;
+    }
+  }
+  td.ui-datepicker-today {
+    font-weight: 700;
+    a{
+      color: #1385e5;
+    }
+  }
+
+  td.ui-datepicker-current-day {
+    background: $blue;
+    font-weight: 700;
+    a{
+      color: #fff;
+    }
+  }
+
+  td.ui-datepicker-unselectable {
+    pointer-events: none
+  }
+
+  td.ui-datepicker-unselectable:hover {
+    border-color: $grey_lighter;
+    background: white;
+  }
+
+  .next-month, .prev-month {
+    color: #999;
+  }
+  &-title {
+    line-height: 30px;
+    color: #1385e5;
+    text-align: center;
+    margin-bottom: 13px;
+  }
+  &-prev, &-next {
+    position: relative; width: 30px; height: 30px; padding: 0;
+    line-height: 30px;
+    color: #fff;
+    border: 1px solid #1385e5;  border-radius: 50%;
+    background: #1385e5;
+    font-size: 20px;
+    text-align: center;
+    outline: 0;
+    z-index: 5;
+    cursor: pointer;
+
+    span {
+      display: none;
+    }
+  }
+  &-prev {
+    float: left
+  }
+  &-prev:before {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position-y: 0px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHRpdGxlPkFydGJvYXJkIDM8L3RpdGxlPjxwb2x5Z29uIGZpbGw9JyNmZmZmZmYnIHBvaW50cz0iOS45OCAxMy4yNiA0LjkyIDguMiA2LjMzIDYuNzkgOS45OCAxMC40MyAxMy42NiA2Ljc0IDE1LjA4IDguMTYgOS45OCAxMy4yNiIvPjwvc3ZnPg==);
+  }
+  &-next {
+    float: right
+  }
+  &-next:before {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position-y: 0px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHRpdGxlPkFydGJvYXJkIDM8L3RpdGxlPjxwb2x5Z29uIGZpbGw9JyNmZmZmZmYnIHBvaW50cz0iOS45OCAxMy4yNiA0LjkyIDguMiA2LjMzIDYuNzkgOS45OCAxMC40MyAxMy42NiA2Ljc0IDE1LjA4IDguMTYgOS45OCAxMy4yNiIvPjwvc3ZnPg==);
+  }
+  .current-date {
+    color: $blue;
+  }
+}

@@ -1,6 +1,11 @@
 $(function () {
+
   var large_break = 1200;
 
+  // Apply clockpicker styles
+  $('.clockpicker').clockpicker();
+
+  // Apply index cards layout
   $('.index .index_table').cardtable();
 
   /******************************************************************
@@ -121,7 +126,7 @@ $(function () {
   /******************************************************************/
   var filterMaxWidth = 0;
   $('.filter_fields .filter_form_field').each(function() {
-    var itemWidth = $(this)[0].offsetWidth;
+    var itemWidth = $(this).first().outerWidth(true);
     filterMaxWidth = Math.max(filterMaxWidth, itemWidth)
   });
   $('.filter_fields .filter_form_field').css('width', filterMaxWidth);
@@ -129,31 +134,34 @@ $(function () {
   /******************************************************************
   // Align inputs if filters are all stacked
   /******************************************************************/
-  var filterStacked = true
+  var filtersStacked = true
   var offSetLeft
   var labelMaxWidth = 0
 
   areFiltersStacked();
   filterSpacing();
+  dateRangeWidth();
 
   $(window).bind('resize', function(e) {
-    filterStacked = true
+    filtersStacked = true
     var labelMaxWidth = 0
 
     areFiltersStacked();
     filterSpacing();
+    dateRangeWidth();
   });
 
+  // True if filters in single column
   function areFiltersStacked() {
     $('.filter_fields .filter_form_field label').each(function(index) {
-      var itemWidth = $(this)[0].offsetWidth;
+      var itemWidth = $(this).first().outerWidth(true);
       labelMaxWidth = Math.max(labelMaxWidth, itemWidth);
 
       if(index === 0) {
         offSetLeft = $(this)[0].offsetLeft;
       } else {
         if($(this)[0].offsetLeft !== offSetLeft) {
-          filterStacked = false;
+          filtersStacked = false;
         }
       }
     });
@@ -162,12 +170,21 @@ $(function () {
   function filterSpacing() {
     var labelWidth
     $('.filter_fields .filter_form_field label').each(function() {
-      if(filterStacked) {
-        labelWidth = $(this)[0].offsetWidth;
+      if(filtersStacked) {
+        labelWidth = $(this).first().outerWidth(true);
         $(this)[0].style.marginRight = (labelMaxWidth - labelWidth + 50) + 'px';
       } else {
         $(this)[0].style.marginRight = '1em';
       }
     });
+  }
+
+  function dateRangeWidth() {
+    setTimeout(function(){
+      $('.filter_fields .filter_form_field.date_range').each(function() {
+        var firstDatepickerWidth = $(this).children('input.datepicker').first().innerWidth();
+        $(this).children('input.datepicker').eq(1).css('max-width', (firstDatepickerWidth + 2) + 'px');
+      });
+    },50);
   }
 });

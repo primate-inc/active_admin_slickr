@@ -1,0 +1,9 @@
+.logged_in {
+  #wrapper {
+    #title_bar {
+      #titlebar_left {
+        @extend %breadcrumbs;
+      }
+    }
+  }
+}

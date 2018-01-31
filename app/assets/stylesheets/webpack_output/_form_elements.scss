@@ -1,0 +1,236 @@
+%login_form_basics {
+  fieldset {
+    padding: 0; margin: 0;
+    border: none
+  }
+  fieldset.actions {
+    margin-top: 1em;
+    ol {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .input_action {
+          margin-right: 1em;
+        }
+    }
+  }
+  fieldset {
+    ol {
+      list-style-type: none;
+      padding: 0; margin: 0;
+      li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-bottom:.5em
+      }
+      li.error {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      }
+      li.boolean label {}
+      li.input_action input {
+        @extend %button;
+      }
+      li.password > label, li.email > label, li.string > label, li.select > label {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 120px;
+                flex: 1 0 120px;
+        max-width: 150px;
+      }
+      li.password, li.email, li.string, li.select {
+        label {
+            @extend .para_style;
+            margin-right: 1em;
+            abbr {
+              text-decoration: none;
+            }
+        }
+      }
+      li.password > input, li.email > input, li.string > input, li.select > input {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 150px;
+                flex: 1 0 150px;
+        min-height: 30px;
+      }
+      li.password, li.email, li.string, li.select {
+        input, select {
+            @extend %text_input_field;
+        }
+      }
+      li {
+        textarea {
+          @extend %text_input_field;
+          height: 10em; width: 100%;
+        }
+        .field_with_errors:nth-child(1) {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0 120px;
+                  flex: 1 0 120px;
+          max-width: 150px;
+          margin-right: 1em;
+        }
+        .field_with_errors:nth-child(2) {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0 150px;
+                  flex: 1 0 150px;
+        }
+        .field_with_errors {
+          label { color: $alert;
+          }
+          input { border-color: $alert; width: 100%;
+          }
+        }
+        .inline-errors {
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%;
+          margin: 0;
+          color: $alert;
+        }
+      }
+    }
+  }
+}
+%admin_form_basics {
+  legend {
+    @extend %label;
+  }
+  fieldset {
+    padding: 0; margin: 0;
+    border: none
+  }
+  fieldset.actions {
+    padding-top: 1em;
+    ol {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        .input_action {
+          margin-right: 1em;
+        }
+    }
+  }
+  fieldset {
+    > ol {
+      list-style-type: none;
+      padding: 0; margin: 0;
+      > li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column;
+                flex-flow: column;
+        margin-bottom: 1.5em
+      }
+      > li.error {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      }
+      > li.boolean label {}
+      > li.input_action input {
+        @extend %button;
+      }
+      > li.file_modified {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-top: 1em;
+        input {
+            position: absolute; width: 0.1px; height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            z-index: -1
+        }
+        input + label {
+          @extend %button;
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0 200px;
+                  flex: 1 0 200px;
+          display: inline-block;
+          width: 45%;
+        }
+        .file_name {
+            width: 45%; padding-left: .5em;
+            color: $blue;
+        }
+      }
+      > li.boolean {
+        label {
+            @extend %label;
+        }
+      }
+      > li {
+        /* Don't include &.input here as it has unintended consequenses */
+      }
+      > li.password > label, > li.email > label, > li.string > label, > li.select > label, > li.text > label, > li.number > label, > li.datepicker > label, > li.phone > label, > li.country > label, > li.time_picker > label {
+        width: 100%;
+      }
+      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker {
+        label {
+            @extend %label;
+        }
+      }
+      > li.password > input, > li.email > input, > li.string > input, > li.select > input, > li.text > input, > li.number > input, > li.datepicker > input, > li.phone > input, > li.country > input, > li.time_picker > input {
+        width: 100%;
+      }
+      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker {
+        input {
+            @extend %admin_text_input_field;
+        }
+        select {
+            @extend %text_input_field;
+        }
+        textarea {
+            @extend %admin_text_input_field;
+            height: 10em; width: 100%;
+        }
+      }
+      > li {
+        .field_with_errors:nth-child(1) {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0;
+                  flex: 1 0;
+          margin-right: 1em;
+        }
+        .field_with_errors:nth-child(2) {
+          -webkit-box-flex: 1;
+              -ms-flex: 1 0 50px;
+                  flex: 1 0 50px;
+        }
+        .field_with_errors {
+          label { color: $alert;
+          }
+          input { border-color: $alert; width: 100%;
+          }
+        }
+        .inline-errors {
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%;
+          margin: 0 0 15px 0;
+          color: $alert;
+        }
+      }
+    }
+  }
+}

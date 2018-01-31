@@ -14,25 +14,33 @@ gem 'active_admin_slickr'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install active_admin_slickr
+```bash
+gem install active_admin_slickr
+```
 
-## Usage
+## Stylesheets
 
-- In the `active_admin.scss` file, you include `active_admin_slickr`. **Note: You have to comment the active admin stylesheets.**
+Firstly, please comment out the default Active Admin stylesheets.
 
 ```css
 // Active Admin's got SASS!
 // @import "active_admin/mixins";
 // @import "active_admin/base";
+```
 
-// Active Bootstrap
+Then add the following in `active_admin.scss`:
+
+```css
 @import 'active_admin_slickr';
 ```
 
+## Javascript
 - In the `active_admin.js` file, you require `active_admin_slickr`.
 
 ```javascript
@@ -41,7 +49,29 @@ Or install it yourself as:
 //= require active_admin_slickr
 ```
 
+## Additions to Active Admin
+
+### Time picker styles
+
+The new style can be used within a form like so:
+
+```ruby
+f.input :time, as: :time_picker, wrapper_html: { class: 'clockpicker', 'data-autoclose': 'true' }
+```
+
 ## Development
+
+### Webpack
+
+```bash
+npm run watch
+```
+
+Stylesheets in `stylesheets/files_to_edit` will be watched and compiled by webpack
+into `webpack_output`. Only make edits to the files in `files_to_edit` and webpack
+will automatically output to `webpack_output` after using the PostCSS loader.
+
+### Install
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 

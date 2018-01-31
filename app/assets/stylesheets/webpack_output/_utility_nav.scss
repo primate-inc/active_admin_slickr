@@ -1,0 +1,42 @@
+.logged_in {
+  #utility_nav {
+    li {
+      display: inline-block
+    }
+    li#current_user {
+      @extend %user_link;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-right: 1em;
+      -webkit-transition: 0.2s;
+      transition: 0.2s
+    }
+    li#current_user:before {
+      content: ' ';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: .25em;
+      margin-left: -.25em;
+      background: image-url("svgs/user.svg") no-repeat;
+    }
+    li#current_user:hover {
+      color: white;
+    }
+    #logout {
+      @extend %sign_out_link;
+      -webkit-transition: 0.2s;
+      transition: 0.2s
+    }
+    #logout:hover {
+      color: white;
+    }
+    a {
+      color: inherit;
+    }
+  }
+}

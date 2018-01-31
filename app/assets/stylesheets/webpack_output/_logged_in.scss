@@ -1,0 +1,14 @@
+.logged_in {
+  .blank_slate_container {
+    @extend %large_cta;
+  }
+  #wrapper {
+    @extend %admin-wrapper;
+  }
+}
+.logged_in.index {
+  #wrapper #active_admin_content #main_content_wrapper {
+      border-top-width: 0;
+      background-color: $grey_lightest;
+  }
+}

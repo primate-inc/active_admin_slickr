@@ -122,7 +122,7 @@
           }
         }
         // Don't include &.input here as it has unintended consequenses
-        &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone, &.country {
+        &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone, &.country, &.time_picker {
           & > label {
             width: 100%;
           }
