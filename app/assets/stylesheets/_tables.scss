@@ -1,3 +1,24 @@
+%table_header_cell {
+  position: relative; padding: .75em .5em;
+  background: $grey_lightest;
+  color: $grey;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+}
+%table_normal_cell {
+  background:white;
+  border-bottom: 1px solid $grey_lighter;
+  color: $grey_dark;
+  padding: .75em .65em;
+  @extend .para_style;
+}
+.table_normal_cell {
+  @extend %table_normal_cell;
+}
+.table_header_cell {
+  @extend %table_header_cell;
+}
 .logged_in {
   #wrapper {
     .table_actions {
@@ -23,7 +44,7 @@
           }
           tr {
             td {
-              @extend %table_normal_cell;
+              @extend .table_normal_cell;
 
               &.col-selectable {
                 .resource_selection_cell input {
@@ -39,7 +60,7 @@
         thead {
           tr {
             th {
-              @extend %table_header_cell;
+              @extend .table_header_cell;
               a {
                 @extend .para_style;
                 position: relative; margin-right: 1em;
@@ -155,19 +176,4 @@
       }
     }
   }
-}
-%table_header_cell {
-  position: relative; padding: .75em .5em;
-  background: $grey_lightest;
-  color: $grey;
-  font-weight: 400;
-  text-align: left;
-  white-space: nowrap;
-}
-%table_normal_cell {
-  background:white;
-  border-bottom: 1px solid $grey_lighter;
-  color: $grey_dark;
-  padding: .75em .65em;
-  @extend .para_style;
 }
