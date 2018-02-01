@@ -187,4 +187,32 @@ $(function () {
       });
     },50);
   }
+
+  /******************************************************************
+  // Checkboxes
+  /******************************************************************/
+  var checkboxes = $('.checkboxes input');
+  var input_boxes = $('.checkboxes .choice');
+
+  // highlight boxes that are checked.
+  checkboxes.each(function(index) {
+    if (checkboxes.eq(index).is(':checked')) {
+      input_boxes.eq(index).addClass('checked')
+    } else {
+      input_boxes.eq(index).removeClass('checked')
+    }
+  });
+
+  // Highlight boxes that are checked on click.
+  $('.checkboxes').on('change', '.choice  input', function(e) {
+    var box = e.target.closest('.choice');
+    console.log(box.className)
+
+    if($(this).is(":checked")) {
+      box.className = 'choice checked';
+    } else {
+      box.className = 'choice';
+    }
+  });
+
 });

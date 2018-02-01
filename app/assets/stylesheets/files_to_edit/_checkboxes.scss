@@ -1,0 +1,39 @@
+.checkboxes {
+  .choices-group {
+    display: flex;
+  	flex-wrap: wrap;
+    justify-content: space-between;
+
+    .choice {
+      width: 32%; margin: 0.2em 1%;
+      justify-content: center;
+      border:2px solid $grey_lighter;
+      transition: 0.2s;
+
+      &:nth-of-type(3n) {
+      	margin-right: 0;
+      }
+      &:nth-of-type(3n+1) {
+  	    margin-left: 0;
+      }
+      &.checked {
+        border:2px solid $blue; background-color: $blue;
+        label {
+          color: white;
+        }
+      }
+
+      label {
+        padding: 0.5em 0; display: flex;
+        cursor: pointer; font-size: 0.95em; text-align: center;
+        color: $blue;
+        justify-content: center;
+        transition: 0.2s;
+
+        input {
+          position:absolute; top:-20px; display: none;
+        }
+      }
+    }
+  }
+}
