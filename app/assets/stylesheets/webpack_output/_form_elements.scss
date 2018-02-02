@@ -183,20 +183,33 @@
       > li {
         /* Don't include &.input here as it has unintended consequenses */
       }
-      > li.password > label, > li.email > label, > li.string > label, > li.select > label, > li.text > label, > li.number > label, > li.datepicker > label, > li.phone > label, > li.country > label, > li.time_picker > label, > li.url > label {
+      > li.password > label, > li.email > label, > li.string > label, > li.select > label, > li.text > label, > li.number > label, > li.datepicker > label, > li.phone > label, > li.country > label, > li.time_picker > label, > li.url > label, > li.file > label {
         width: 100%;
       }
-      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker, > li.url {
+      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker, > li.url, > li.file {
         label {
             @extend %label;
         }
       }
-      > li.password > input, > li.email > input, > li.string > input, > li.select > input, > li.text > input, > li.number > input, > li.datepicker > input, > li.phone > input, > li.country > input, > li.time_picker > input, > li.url > input {
+      > li.password > input, > li.email > input, > li.string > input, > li.select > input, > li.text > input, > li.number > input, > li.datepicker > input, > li.phone > input, > li.country > input, > li.time_picker > input, > li.url > input, > li.file > input {
         width: 100%;
       }
-      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker, > li.url {
+      > li.password, > li.email, > li.string, > li.select, > li.text, > li.number, > li.datepicker, > li.phone, > li.country, > li.time_picker, > li.url, > li.file {
         input {
             @extend %admin_text_input_field;
+        }
+        input[type='file']::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+        input[type='file'] {
+            padding: 0;
+            background-color: white; color: $blue;
+            border-bottom: none;
+            cursor: pointer
+        }
+        input[type='file']:before {
+          content: 'Upload';
+          @extend %button;
         }
         select {
             @extend %text_input_field;
