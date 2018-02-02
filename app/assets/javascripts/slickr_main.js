@@ -191,22 +191,22 @@ $(function () {
   /******************************************************************
   // Checkboxes
   /******************************************************************/
-  var checkboxes = $('.checkboxes input');
-  var input_boxes = $('.checkboxes .choice');
+  var checkboxes = $('.checkboxes .choices-group');
 
   // highlight boxes that are checked.
-  checkboxes.each(function(index) {
-    if (checkboxes.eq(index).is(':checked')) {
-      input_boxes.eq(index).addClass('checked')
-    } else {
-      input_boxes.eq(index).removeClass('checked')
-    }
+  checkboxes.each(function(i) {
+    $(this).find('input').each(function(index) {
+      if ($(this).is(':checked')) {
+        $(this).parents().parents().addClass('checked')
+      } else {
+        $(this).parents().parents().removeClass('checked')
+      }
+    });
   });
 
   // Highlight boxes that are checked on click.
   $('.checkboxes').on('change', '.choice  input', function(e) {
     var box = e.target.closest('.choice');
-    console.log(box.className)
 
     if($(this).is(":checked")) {
       box.className = 'choice checked';
