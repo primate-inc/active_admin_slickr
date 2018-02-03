@@ -40,7 +40,7 @@
 }
 
 .true_false {
-  width: 32%; margin: 0.2em 1%;
+  width: 32%; margin: 0.2em 0;
   display: flex; justify-content: center;
   border:2px solid $grey_lighter;
   transition: 0.2s;
@@ -48,7 +48,7 @@
   &.checked {
     border:2px solid $blue; background-color: $blue;
     label {
-      color: white;
+      color: white !important;
     }
   }
 
