@@ -1,3 +1,22 @@
+%slickr_tabs {
+  display: flex; align-items: center; justify-content: center;
+  margin: 0; padding: 0 0 1em;
+  list-style-type: none;
+}
+%slickr_tab {
+  @extend %general_link;
+  background: $white;
+  display: block; padding: .5em 1em;
+}
+%slickr_active_tab {
+  @extend %general_link;
+  background: $blue;
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+}
 .logged_in {
   #wrapper {
     #active_admin_content {
@@ -5,19 +24,13 @@
         #main_content {
           .table_tools {
             .scopes {
-              display: flex; align-items: center; justify-content: center;
-              margin: 0; padding: 0 0 1em;
-              list-style-type: none;
+              @extend %slickr_tabs;
               .scope {
                 a {
-                  @extend %general_link;
-                  background: $white;
-                  display: block; padding: .5em 1em;
+                  @extend %slickr_tab;
                 }
                 &.selected a {
-                  @extend %general_link;
-                  background: $blue;
-                  color: $white;
+                  @extend %slickr_active_tab;
                 }
                 &:not(:first-child) {
                   margin-left: .5em;

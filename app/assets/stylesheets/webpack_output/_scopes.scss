@@ -1,3 +1,24 @@
+%slickr_tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+  margin: 0; padding: 0 0 1em;
+  list-style-type: none;
+}
+%slickr_tab {
+  @extend %general_link;
+  background: $white;
+  display: block; padding: .5em 1em;
+}
+%slickr_active_tab {
+  @extend %general_link;
+  background: $blue;
+  color: $white;
+  cursor: pointer
+}
+%slickr_active_tab:hover {
+  color: white;
+}
 .logged_in {
   #wrapper {
     #active_admin_content {
@@ -5,22 +26,14 @@
         #main_content {
           .table_tools {
             .scopes {
-              display: -webkit-box;
-              display: -ms-flexbox;
-              display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
-              margin: 0; padding: 0 0 1em;
-              list-style-type: none;
+              @extend %slickr_tabs;
               .scope {
                 a {
-                  @extend %general_link;
-                  background: $white;
-                  display: block; padding: .5em 1em;
+                  @extend %slickr_tab;
                 }
               }
               .scope.selected a {
-                @extend %general_link;
-                background: $blue;
-                color: $white;
+                @extend %slickr_active_tab;
               }
               .scope:not(:first-child) {
                 margin-left: .5em;
