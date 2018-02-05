@@ -310,6 +310,14 @@
     text-decoration: none;
   }
 }
+%hint {
+  @extend .para_style;
+  padding-left: .5em; margin-top: .25em; margin-bottom: .25em;
+  color: $grey_light;
+  abbr {
+    text-decoration: none;
+  }
+}
 %large_cta {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
