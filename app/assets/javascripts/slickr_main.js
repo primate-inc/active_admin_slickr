@@ -187,4 +187,57 @@ $(function () {
       });
     },50);
   }
+
+  /******************************************************************
+  // Checkboxes
+  /******************************************************************/
+  var checkboxes = $('.checkboxes .choices-group');
+
+  // highlight boxes that are checked.
+  checkboxes.each(function(i) {
+    $(this).find('input').each(function(index) {
+      if ($(this).is(':checked')) {
+        $(this).parents().parents().addClass('checked')
+      } else {
+        $(this).parents().parents().removeClass('checked')
+      }
+    });
+  });
+
+  // Highlight boxes that are checked on click.
+  $('.checkboxes').on('change', '.choice  input', function(e) {
+    var box = e.target.closest('.choice');
+
+    if($(this).is(":checked")) {
+      box.className = 'choice checked';
+    } else {
+      box.className = 'choice';
+    }
+  });
+
+  /******************************************************************
+  // Booleans
+  /******************************************************************/
+  // highlight boolean check boxes that are checked.
+  $('.true_false label').each(function(i) {
+    $(this).find('input').each(function(index) {
+      if ($(this).is(':checked')) {
+        $(this).parents().parents().addClass('checked')
+      } else {
+        $(this).parents().parents().removeClass('checked')
+      }
+    });
+  });
+
+  // Highlight boolean check boxes that are checked on click.
+  $('.true_false').on('change', 'label  input', function(e) {
+    var box = e.target.closest('.true_false');
+
+    if($(this).is(":checked")) {
+      box.className = 'true_false checked';
+    } else {
+      box.className = 'true_false';
+    }
+  });
+
 });
