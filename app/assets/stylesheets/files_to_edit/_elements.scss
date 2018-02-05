@@ -289,6 +289,14 @@
     text-decoration: none;
   }
 }
+%hint {
+  @extend .para_style;
+  padding-left: .5em; margin-top: .25em; margin-bottom: .25em;
+  color: $grey_light;
+  abbr {
+    text-decoration: none;
+  }
+}
 %large_cta {
   box-sizing: border-box;
   position: relative; padding: 3em; max-width: 60vw; margin: 2em auto;
