@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "active_admin_slickr"
   spec.version       = ActiveAdminSlickr::VERSION
   spec.authors       = ["Primate"]
-  spec.email         = ["primate.co.uk"]
+  spec.email         = ["admin@primate.co.uk"]
 
   spec.summary       = %q{Modern skin for Active Admin}
   spec.description   = %q{Modern skin for Active Admin}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://primate.co.uk"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
