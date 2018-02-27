@@ -56,6 +56,7 @@
           }
           label { color: $alert; }
           input { border-color: $alert; width: 100%;}
+          select { border-color: $alert; width: 100%;}
         }
         .inline-errors {
           flex-basis: 100%;

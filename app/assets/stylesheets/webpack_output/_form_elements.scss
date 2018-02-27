@@ -86,6 +86,8 @@
           }
           input { border-color: $alert; width: 100%;
           }
+          select { border-color: $alert; width: 100%;
+          }
         }
         .inline-errors {
           -ms-flex-preferred-size: 100%;
