@@ -1,4 +1,5 @@
 require "active_admin_slickr/version"
+require "chosen-rails"
 
 module ActiveAdminSlickr
   module Rails

@@ -29,3 +29,34 @@
   .stacktable.large-only { display: none; }
   .stacktable.small-only { display: table; }
 }
+
+
+/* chosen*/
+.chosen-container-multi {
+  .chosen-choices {
+    @extend %text_input_field;
+    height: auto;
+    height: 100%;
+    overflow: scroll;
+
+    li.search-choice {
+      position: relative; margin-right: 0.5em;
+      background: none !important;
+      -webkit-transform: translateY(50%);
+              transform: translateY(50%);
+      border: none;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      line-height: 0.8em;
+    }
+  }
+
+  .chosen-drop {
+    border: 1px solid $grey_lighter;
+
+    .chosen-results {
+      font-size: medium;
+      font-size: initial;
+    }
+  }
+}

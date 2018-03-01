@@ -240,4 +240,18 @@ $(function () {
     }
   });
 
+  /******************************************************************
+  // Chosen Select
+  /******************************************************************/
+  $('.chosen-select').chosen({
+    allow_single_deselect: true,
+    no_results_text: 'No results matched',
+    width: '100%'
+  })
+
+  $('.chosen-select').change(function(e) {
+    e.preventDefault();
+    return false
+  });
+
 });
