@@ -48,15 +48,23 @@
       -webkit-box-shadow: none;
               box-shadow: none;
       line-height: 0.8em;
+
+      .search-choice-close {
+        background: image-url('chosen-sprite.png') -42px 1px no-repeat;
+      }
     }
   }
-
-  .chosen-drop {
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+ .chosen-container-multi {
+  .chosen-choices {
+   li.search-choice {
+    .search-choice-close { background-image: image-url('chosen-sprite@2x.png') !important; } } } } }
+.chosen-container-multi {
+ .chosen-drop {
     border: 1px solid $grey_lighter;
 
     .chosen-results {
       font-size: medium;
       font-size: initial;
-    }
-  }
-}
+    } } }
