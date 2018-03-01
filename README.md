@@ -51,12 +51,50 @@ Then add the following in `active_admin.scss`:
 
 ## Additions to Active Admin
 
-### Time picker styles
+### Time picker
 
 The new style can be used within a form like so:
 
 ```ruby
 f.input :time, as: :time_picker, wrapper_html: { class: 'clockpicker', 'data-autoclose': 'true' }
+```
+
+### Multi select
+
+This is useful when you need to create an interface whereby a user wants to add an array of books to an author for example. You could add this migration:
+
+```ruby
+def change
+  add_column :authors, :book_ids, :text, array: true, default: []
+end
+```
+
+and in the Active Admin you would add the following to the Author form
+
+```ruby
+input :book_ids,
+      as: :select,
+      collection: Book.all.map{ |book| [book.name, book.id] },
+      input_html: { multiple: true, class: 'chosen-select', 'data-placeholder': 'Select options...' }
+```
+
+ensuring that you keep the class ```chosen-select```.
+
+With this in place you now have a ready to use multi select that will save an array of book ids.
+
+Note that if you use an interface like this, you need to handle the case where a book is removed from the database. To handle this you could do the following in the Book model:
+
+```ruby
+before_destroy :delete_associated_book_ids
+
+private
+
+def delete_associated_book_ids
+  # type casting the book_ids to an integer array
+  # remove the id everywhere it appears in the book_ids column in authors
+  sql = "UPDATE authors SET book_ids = array_remove(book_ids::int[], #{id})"
+  ActiveRecord::Base.connection.execute(sql)
+end
 ```
 
 ## Development
