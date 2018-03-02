@@ -40,6 +40,9 @@
             }
             .tab-content {
               legend { visibility: hidden; }
+              .panel h3 {
+                display: none;
+              }
             }
           }
         }
