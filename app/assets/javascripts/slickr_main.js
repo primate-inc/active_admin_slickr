@@ -254,4 +254,28 @@ $(function () {
     return false
   });
 
+  /******************************************************************
+  // Form Tabs
+  /******************************************************************/
+
+  //Highlight the first tab with contents that have an error
+  if($('.logged_in.create .tabs').length) {
+    var errorIndex = [];
+    $('.tab-content').children().each(function(index) {
+      if(($(this).find('.error').length !== 0)) {
+        errorIndex.push(index)
+      }
+    })
+    if(errorIndex !== []) {
+      $('.nav.nav-tabs .ui-tabs-tab').each(function(index) {
+        if(index === errorIndex[0]) {
+          $(this).find('a').trigger('click')
+        }
+        if($.inArray(index, errorIndex) !== -1) {
+          $(this).addClass('ui-tabs-error')
+        }
+      })
+    }
+  }
+
 });

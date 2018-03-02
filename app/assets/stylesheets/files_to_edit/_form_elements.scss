@@ -123,6 +123,10 @@
         }
         .inline-hints {
           @extend %hint;
+
+          img {
+            margin-left: -0.5em;
+          }
         }
         // Don't include &.input here as it has unintended consequenses
         &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone, &.country, &.time_picker, &.url, &.file {

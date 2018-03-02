@@ -9,6 +9,7 @@
               justify-content: flex-start;
               padding: 0;
               list-style-type: none;
+
               .ui-tabs-tab {
                 a {
                   @extend %general_link;
@@ -19,6 +20,13 @@
                 &.ui-tabs-active a {
                   @extend %general_link;
                   background: $blue;
+                  color: $white;
+                }
+                &.ui-tabs-error a {
+                  color: $alert;
+                }
+                &.ui-tabs-active.ui-tabs-error a {
+                  background: $alert;
                   color: $white;
                 }
               }
