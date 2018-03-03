@@ -59,6 +59,15 @@ The new style can be used within a form like so:
 f.input :time, as: :time_picker, wrapper_html: { class: 'clockpicker', 'data-autoclose': 'true' }
 ```
 
+### Checkbox
+
+New styling for checkbox and be use within a form like so:
+
+```ruby
+input :published,
+      wrapper_html: { class: 'true_false'}
+```
+
 ### Multi select
 
 This is useful when you need to create an interface whereby a user wants to add an array of books to an author for example. You could add this migration:
