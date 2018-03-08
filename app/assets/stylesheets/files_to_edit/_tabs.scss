@@ -5,25 +5,41 @@
         #main_content {
           .ui-tabs {
             .ui-tabs-nav {
+              @extend %blue_section;
+              display: -ms-grid; display: grid;
+              grid-row: resource-tabs;
+              grid-column: auto;
               display: flex;
-              justify-content: flex-start;
-              padding: 0 0 0 2em;
-              list-style-type: none;
+              align-items: stretch;
+              margin: -1px 0 0; height: 4em; padding: 0 2em;
 
               .ui-tabs-tab {
+                @extend %tab_link;
+                position: relative; height: 1em; padding: 8px 12px; margin-top: 1.2em; margin-right: 3em;
+                text-decoration: none; list-style: none;
+                transition: 0.2s;
                 a {
-                  @extend %general_link;
-                  display: block; padding: .5em 1em; margin-left: .5em;
-                  background: $grey_lightest;
-                  outline: none !important;
+                  @extend %tab_link;
                 }
-                &.ui-tabs-active a {
-                  @extend %general_link;
-                  background: $blue;
+                a:hover {
                   color: $white;
+                }
+                &.ui-tabs-active {
+                  padding: 0;
+                  a {
+                    @extend %small_button;
+                    color: white; border: none; background: $blue_dark;
+                    &:hover {
+                      background: darken($blue_dark, 10%);
+                    }
+                  }
                 }
                 &.ui-tabs-error a {
                   color: $alert;
+
+                  &:hover {
+                    color: $white;
+                  }
                 }
                 &.ui-tabs-active.ui-tabs-error a {
                   background: $alert;

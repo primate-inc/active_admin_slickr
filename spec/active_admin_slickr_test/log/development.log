@@ -627,3 +627,38 @@ Processing by Admin::CommentsController#index as HTML
 Completed 200 OK in 213ms (Views: 207.8ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/admin/comments?scope=admin" for 127.0.0.1 at 2018-03-03 20:56:46 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::CommentsController#index as HTML
+  Parameters: {"scope"=>"admin"}
+  [1m[36mAdminUser Load (3.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (44.1ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (1015.1ms)
+Completed 200 OK in 1081ms (Views: 989.6ms | ActiveRecord: 59.0ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2018-03-03 20:56:57 +0000
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (3.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb
+  Rendered /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb (178.8ms)
+Completed 200 OK in 197ms (Views: 189.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-03-03 20:57:18 +0000
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/primate/.rvm/gems/ruby-2.4.1/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (211.9ms)
+Completed 200 OK in 235ms (Views: 229.5ms | ActiveRecord: 1.5ms)
+
+
