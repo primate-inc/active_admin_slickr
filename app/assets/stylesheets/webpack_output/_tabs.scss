@@ -35,6 +35,7 @@
                 padding: 0;
                 a {
                     @extend %small_button;
+                    padding: 8px 12px;
                     color: white; border: none; background: $blue_dark;
                 }
                 a:hover {
