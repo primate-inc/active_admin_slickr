@@ -259,7 +259,7 @@ $(function () {
   /******************************************************************/
 
   //Highlight the first tab with contents that have an error
-  if($('.logged_in.create .tabs').length) {
+  if($('.logged_in.create .tabs, .logged_in.update .tabs').length) {
     var errorIndex = [];
     $('.tab-content').children().each(function(index) {
       if(($(this).find('.error').length !== 0)) {
