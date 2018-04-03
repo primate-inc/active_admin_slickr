@@ -41,12 +41,12 @@
 .true_false {
   width: 32%; margin: 0.2em 0;
   display: flex; justify-content: center;
-  border:2px solid $grey_lighter;
+
   transition: 0.2s;
 
   &.checked {
-    border:2px solid $blue; background-color: $blue;
     label {
+      border: 2px solid $blue; background-color: $blue;
       color: white !important;
     }
   }
@@ -54,7 +54,8 @@
   label {
     padding: 0.5em 0; display: flex; margin-bottom: 0 !important;
     cursor: pointer; font-size: 0.95em; text-align: center;
-    color: $blue;
+    border: 2px solid $grey_lighter;
+    color: $blue !important;
     justify-content: center;
     transition: 0.2s;
 

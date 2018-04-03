@@ -57,15 +57,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
-  border:2px solid $grey_lighter;
+
   -webkit-transition: 0.2s;
+
   transition: 0.2s
 }
 
 .true_false.checked {
-  border:2px solid $blue;
-  background-color: $blue;
   label {
+      border: 2px solid $blue; background-color: $blue;
       color: white !important;
   }
 }
@@ -74,7 +74,8 @@
   label {
     padding: 0.5em 0; display: -webkit-box; display: -ms-flexbox; display: flex; margin-bottom: 0 !important;
     cursor: pointer; font-size: 0.95em; text-align: center;
-    color: $blue;
+    border: 2px solid $grey_lighter;
+    color: $blue !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
