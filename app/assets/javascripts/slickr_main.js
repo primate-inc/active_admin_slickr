@@ -233,10 +233,10 @@ $(function () {
   $('.true_false').on('change', 'label  input', function(e) {
     var box = e.target.closest('.true_false');
 
-    if($(this).is(":checked")) {
-      box.className = 'true_false checked';
+    if($(this).is(':checked')) {
+      box.classList.add('checked');
     } else {
-      box.className = 'true_false';
+      box.classList.remove('checked');
     }
   });
 
