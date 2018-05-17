@@ -225,6 +225,9 @@
             @extend %admin_text_input_field;
             height: 10em; width: 100%;
         }
+        &.admin-big-title textarea {
+          height: 3em;
+        }
       }
       > li {
         .field_with_errors:nth-child(1) {
