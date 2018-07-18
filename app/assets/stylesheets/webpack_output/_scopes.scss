@@ -45,3 +45,21 @@
     }
   }
 }
+.logged_in {
+  #wrapper {
+    #active_admin_content {
+      #main_content_wrapper {
+        #main_content {
+          .table_tools {
+            .scopes {
+              .table_tools_segmented_control {
+                margin: 0;
+                list-style: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
