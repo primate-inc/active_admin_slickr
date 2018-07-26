@@ -1,0 +1,18 @@
+.logged_in #wrapper .formtastic {
+  .has_many_container {
+    .has_many_add {
+      margin-right: auto;
+    }
+    .has_many_fields {
+      margin-top: 0 !important;
+      border-bottom: none !important;
+
+      .has_many_remove {
+        margin-left: auto;
+      }
+    }
+    .has_many_delete {
+      margin-left: auto; margin-right: 0;
+    }
+  }
+}
