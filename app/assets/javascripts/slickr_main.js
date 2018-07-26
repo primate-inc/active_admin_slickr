@@ -219,7 +219,7 @@ $(function () {
   // Booleans
   /******************************************************************/
   // highlight boolean check boxes that are checked.
-  $('.true_false label').each(function(i) {
+  $('.true_false label, .has_many_delete label').each(function(i) {
     $(this).find('input').each(function(index) {
       if ($(this).is(':checked')) {
         $(this).parents().parents().addClass('checked')
@@ -230,8 +230,12 @@ $(function () {
   });
 
   // Highlight boolean check boxes that are checked on click.
-  $('.true_false').on('change', 'label  input', function(e) {
-    var box = e.target.closest('.true_false');
+  $('.true_false, .has_many_delete').on('change', 'label  input', function(e) {
+    var box;
+    box = e.target.closest('.true_false');
+    if(box === null) {
+      box = e.target.closest('.has_many_delete');
+    }
 
     if($(this).is(':checked')) {
       box.classList.add('checked');
