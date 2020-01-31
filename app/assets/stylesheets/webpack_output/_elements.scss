@@ -55,6 +55,22 @@
 %admin_text_input_field:hover {
   border-color: $blue;
 }
+%admin_text_input_field:hover:-moz-read-only, %admin_text_input_field:focus:-moz-read-only {
+  border-color: $grey_lightest;
+}
+%admin_text_input_field:hover:read-only, %admin_text_input_field:focus:read-only {
+  border-color: $grey_lightest;
+}
+%admin_text_input_field:-moz-read-only {
+  background-color: $blue;
+  color: $white;
+  font-weight: 100;
+}
+%admin_text_input_field:read-only {
+  background-color: $blue;
+  color: $white;
+  font-weight: 100;
+}
 %text_input_field {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -65,6 +81,7 @@
   border: 1px solid $grey_lighter; border-radius: 3px;
   -webkit-transition: .2s;
   transition: .2s
+    
 }
 %text_input_field:hover {
   border-color: $blue;
