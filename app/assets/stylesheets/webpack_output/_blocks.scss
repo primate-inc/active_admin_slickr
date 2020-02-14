@@ -102,20 +102,22 @@
           vertical-align: middle;
         }
       }
-      li.has_nested:hover {
+      li.has_nested.active {
+        /* revealing dropdown */
+
+        ul {
+            max-height: 300px;
+            -webkit-transition: max-height 0.2s;
+            transition: max-height 0.2s;
+        }
 
         > a:after {
           -webkit-transform: rotate(45deg);
                   transform: rotate(45deg);
         }
-
-        ul {
-              max-height: 300px;
-              -webkit-transition: max-height 0.2s;
-              transition: max-height 0.2s;
-        }
       }
       li.has_nested.current {
+        /* on page within dropdown */
 
         ul {
             max-height: 300px;
