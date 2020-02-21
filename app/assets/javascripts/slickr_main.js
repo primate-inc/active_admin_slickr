@@ -99,7 +99,7 @@ $(function () {
   // Open nested sidebar items on click
   /******************************************************************/
 
-  $('.menu_item.has_nested a').click(function (e) {
+  $('.menu_item.has_nested > a').click(function (e) {
     e.preventDefault();
     $(e.target).parent('li').toggleClass('active');  
   });
