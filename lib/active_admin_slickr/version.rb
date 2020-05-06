@@ -1,3 +1,3 @@
 module ActiveAdminSlickr
-  VERSION = "0.1.41"
+  VERSION = "0.1.44"
 end

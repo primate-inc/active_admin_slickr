@@ -96,6 +96,15 @@ $(function () {
   }
 
   /******************************************************************
+  // Open nested sidebar items on click
+  /******************************************************************/
+
+  $('.menu_item.has_nested > a').click(function (e) {
+    e.preventDefault();
+    $(e.target).parent('li').toggleClass('active');  
+  });
+
+  /******************************************************************
   // Hide flash messages after certain time
   /******************************************************************/
   if($(".logged_in .flashes .flash").length) {
