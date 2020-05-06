@@ -1,3 +1,8 @@
+@import './variables';
+@import './elements';
+@import './fonts';
+@import './tables';
+@import './form_elements';
 %admin-wrapper {
   display: -ms-grid; display: grid;
   -ms-grid-column-align: stretch; -ms-grid-row-align: stretch;

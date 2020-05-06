@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
 
-  spec.add_dependency "chosen-rails", "~> 1.8.7"
+  spec.add_dependency "chosen-rails", "~> 1.9.0"
 end

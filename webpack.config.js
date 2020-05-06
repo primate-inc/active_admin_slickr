@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const glob = require('glob');
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackCleanPlugin = require('webpack-clean');
 
 
@@ -20,18 +20,24 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'postcss-loader'
-          ]
-        })
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              fallback: 'style-loader',
+            },
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ]
       }
     ]
   },
 
   plugins: [
-    new ExtractTextPlugin('./app/assets/stylesheets/webpack_output/[name]'),
+    new MiniCssExtractPlugin('./app/assets/stylesheets/webpack_output/[name]'),
     new WebpackCleanPlugin(
       toArray(glob.sync('./app/assets/javascripts/clear_webpack_output/**/*.js*')),
       '/'
