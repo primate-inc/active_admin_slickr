@@ -265,7 +265,36 @@ $(function () {
   $('.chosen-select').change(function(e) {
     e.preventDefault();
     return false
-  });
+  });  
+
+  /******************************************************************
+  // Chosen Select -- Ordered
+  /******************************************************************/
+  
+  // Multiselect doesn't account for selection order, just the collection order.
+  // Using chosen-order plugin, we fake the order in the UI from a data attribute.
+  $('.chosen-select.chosen-select-ordered').each(function(i, el) {
+    data = $(this).attr('data').split(' ')
+    $(this).setSelectionOrder(data)
+  })
+
+  // On submit, we disable the multiselect input
+  // and render a series of inputs in the order that we want. 
+  $('.formtastic:has(".chosen-select.chosen-select-ordered")').one('submit', function(event) {
+    event.preventDefault();
+    $form = $(this)
+    $('.chosen-select.chosen-select-ordered').each(function(i, el) {
+      $multiselect = $(this)
+      $multiselect.attr('disabled', 'disabled');
+      $.each($multiselect.getSelectionOrder(), function(i, value) {
+        $input = $('<input>').attr('type', 'hidden')
+                             .attr('name', $multiselect.attr('name'))
+                             .attr('value', value)
+        $form.append($input)
+      })
+    })
+    $(this).submit();
+  })
 
   /******************************************************************
   // Form Tabs
@@ -290,5 +319,4 @@ $(function () {
       })
     }
   }
-
 });

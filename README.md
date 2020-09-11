@@ -89,6 +89,8 @@ input :book_ids,
 
 ensuring that you keep the class ```chosen-select```.
 
+Additionally, you can add the class ```chosen-select chosen-select-ordered``` and your input will save in order which items are selected. By default, a multiselect will save in the order of the options within the multi-select. 
+
 With this in place you now have a ready to use multi select that will save an array of book ids.
 
 Note that if you use an interface like this, you need to handle the case where a book is removed from the database. To handle this you could do the following in the Book model:

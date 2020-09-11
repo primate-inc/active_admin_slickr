@@ -2,3 +2,4 @@
 //= require stackable.js
 //= require clockpicker.js
 //= require chosen-jquery
+//= require chosen-jquery-order
