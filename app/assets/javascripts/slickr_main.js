@@ -291,4 +291,36 @@ $(function () {
     }
   }
 
+  /******************************************************************
+  // Reorderable relation
+  /******************************************************************/
+
+  $("input[class*='_lookup_field']").each(function(index,input) {
+    var container = $(input).parent()
+    var data = $(container).data('collection_data')
+    var setup = $(container).data('setup')
+    var listContainer = $(container).children("div[id*='_target_list']").first()
+    var list = $("ul", $(listContainer)).first()
+    var submitable_list = $(".lookup_submitable_area",$(container)).first()
+    $(list).sortable({
+      handle: ".reorder-handle",
+    })
+    $(input).autocomplete({
+      lookup: data,
+      maxHeight: 200,
+      onSelect: function (suggestion) {
+        var item = $("<li class='reorderable_relation_container-list-item'><span class='reorder-handle'>=</span><span class='reorderable_relation_container-list-item-title'>"+suggestion.value+"</span><span class='reorderable_relation_container-list-item-remove'>x</span></li>")
+        var item_input = $("<input name='"+ setup.field_name +"' type='hidden' value='"+ suggestion.data +"'/>")
+        item.append(item_input)
+        list.append(item)
+        $(input).val("")
+      }
+    });
+  })
+  $(".reorderable_relation_container-list").on("click",".reorderable_relation_container-list-item-remove", function(e) {
+    if(confirm("Are you sure?")) {
+      var target = e.target
+      $(target).parent().remove()                                                                                                                          }
+  })
+
 });
