@@ -113,7 +113,12 @@ end
 ### Webpack
 
 ```bash
-npm run watch
+yarn watch
+```
+
+or within Docker container
+```bash
+docker-compose run app yarn watch
 ```
 
 Stylesheets in `stylesheets/files_to_edit` will be watched and compiled by webpack

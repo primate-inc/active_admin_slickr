@@ -1,48 +1,9 @@
 version: "3"
 services:
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: aa_slickr
-    ports:
-      - "5432"
-    volumes:
-      - dbdata:/var/lib/postgresql/data
-  web:
+  app:
     tty: true
     stdin_open: true
     build: .
     command: bash
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: aa_slickr
-      DATABASE_URL: postgres://postgres@db
-      WEBPACKER_DEV_SERVER_HOST: webpack
-      REDIS_URL: 'redis://redis:6379'
-      LOCAL_HOST: ${LOCAL_HOST}
-    volumes:
-      - .:/active_admin_slickr
-      - ${SSH_PATH}:/home/.ssh
     ports:
-      - "3000:3000"
       - "8080:8080"
-    depends_on:
-      - db
-  webpack:
-    build: .
-    #command: ./bin/webpack-dev-server
-    volumes:
-      - .:/active_admin_slickr
-    ports:
-      - '3035:3035'
-    environment:
-      NODE_ENV: development
-      RAILS_ENV: development
-      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
-volumes:
-  dbdata:
-
