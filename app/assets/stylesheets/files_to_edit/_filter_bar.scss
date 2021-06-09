@@ -1,7 +1,3 @@
-@import './variables';
-@import './fonts';
-@import './elements';
-@import './tables';
 #filters_sidebar_section {
   @extend %blue_section;
   h3 { display: none; }

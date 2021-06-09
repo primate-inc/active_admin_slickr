@@ -1,56 +1,78 @@
 .reorderable_relation_container {
   &-list {
     list-style-type: none;
+    padding: 8px;
     padding: .5rem;
     background: #F2F2F2;
     border: 1px solid #E6E6E6;
     &-item {
       border: 2px solid #E6E6E6;
+      margin-bottom: 1.6px;
       margin-bottom: .1rem;
       background: #fff;
+      padding: 8px 16px 8px 16px;
       padding: .5rem 1rem .5rem 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       &-title {
         font-weight: 600;
-        flex: 1 1 300px;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 300px;
+                flex: 1 1 300px;
       }
       &-remove {
         font-weight: 600;
-        flex: 0 0 1rem;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 16px;
+                flex: 0 0 16px;
+        -ms-flex: 0 0 1rem;
+            flex: 0 0 1rem;
         cursor: pointer;
-        color: #E6E6E6;
-        &:hover {
-          color: #469CFF;
-        }
+        color: #E6E6E6
       }
-
-      &:last-child {
-        margin-bottom: 0;
+      &-remove:hover {
+        color: #469CFF;
       }
+    }
+    &-item:last-child {
+      margin-bottom: 0;
     }
     .reorder-handle {
       position: relative;
+      top: -2.4px;
       top: -.15rem;
       content: '....';
-      flex: 0 0 10px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 10px;
+              flex: 0 0 10px;
       width: 10px;
+      height: 24px;
       height: 1.5rem;
       display: inline-block;
       overflow: hidden;
       line-height: 5px;
       cursor: move;
       vertical-align: middle;
+      margin-right: 16px;
       margin-right: 1rem;
       font-size: 16px;
       letter-spacing: 2px;
+      color: #469CFF
+    }
+    .reorder-handle:before {
+      content: '.. .. .. ..';
       color: #469CFF;
-      &:before{
-        content: '.. .. .. ..';
-        color: #469CFF;
-      }
     }
     .sortable-ghost {
       opacity: .2;
@@ -61,9 +83,10 @@
     }
   }
 }
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; padding: .5rem;}
-.autocomplete-suggestion { padding: .5rem 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; padding: 8px; padding: .5rem;}
+.autocomplete-suggestion { padding: 8px 5px; padding: .5rem 5px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #F0F0F0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #469CFF; }
 .autocomplete-group { padding: 2px 5px; }
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+

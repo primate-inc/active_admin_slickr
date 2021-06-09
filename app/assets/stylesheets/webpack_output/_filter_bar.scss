@@ -105,7 +105,7 @@
       input::-webkit-input-placeholder {
         color: white;
       }
-      input:-ms-input-placeholder {
+      input::-moz-placeholder {
         color: white;
       }
       input::-ms-input-placeholder {
@@ -117,3 +117,4 @@
     }
   }
 }
+

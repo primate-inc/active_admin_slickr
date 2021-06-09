@@ -21,23 +21,28 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-              fallback: 'style-loader',
-            },
-          },
-          'css-loader',
+	  {
+	    loader: MiniCssExtractPlugin.loader,
+	    options: {
+	      hmr: process.env.NODE_ENV === 'development',
+	      fallback: 'style-loader',
+	    }
+	  },
+	  {
+	    loader: 'css-loader',
+	    options: {
+	      url: false,
+	      import: false,
+	    }
+	  },
           'postcss-loader',
-          'sass-loader',
         ]
       }
     ]
   },
 
   plugins: [
-    new MiniCssExtractPlugin('./app/assets/stylesheets/webpack_output/[name]'),
+    new MiniCssExtractPlugin({filename: '../app/assets/stylesheets/webpack_output/[name]'}),
     new WebpackCleanPlugin(
       toArray(glob.sync('./app/assets/javascripts/clear_webpack_output/**/*.js*')),
       '/'
