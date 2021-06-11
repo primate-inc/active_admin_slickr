@@ -10,5 +10,6 @@
 /node_modules
 /package-lock.json
 app/assets/javascripts/clear_webpack_output
+dist/
 
 spec/active_admin_slickr_test/tmp
