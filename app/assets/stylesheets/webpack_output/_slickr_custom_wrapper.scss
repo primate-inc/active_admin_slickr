@@ -1,0 +1,70 @@
+.logged_in {
+  #custom-wrapper {
+    #header {
+      #utility_nav {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+      }
+    }
+
+    @extend %admin-wrapper !optional;
+    grid-template-rows: 1fr 50px;
+    grid-template-areas:
+      "sidebar content"
+      "sidebar footer";
+
+    #title_bar {
+      height: 4em;
+    }
+
+    #resource_tabs {
+      display: -ms-grid; display: grid;
+      grid-row: resource-tabs;
+      grid-column: auto;
+      @extend %blue_section;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      height: 4em; padding: 0 2em;
+      h3 { display: none; }
+      .links {
+        @extend %tab_link;
+        position: relative; height: 1em; padding: 8px 12px; margin-top: 1.2em; margin-right: 3em;
+        text-decoration: none;
+        -webkit-transition: 0.2s;
+        transition: 0.2s
+      }
+      .links:hover {
+        color: $white;
+      }
+      .links.active {
+        @extend %small_button;
+        color: white;
+        border: none;
+        background: $blue_dark;
+      }
+      .links.active:hover {
+        background: darken($blue_dark, 10%);
+      }
+    }
+  }
+  .display-avatar {
+    @extend %display-avatar;
+  }
+}
+.logged_in.index.admin_settings {
+  #wrapper #active_admin_content #main_content_wrapper {
+      border-top-width: 0;
+      -ms-grid-row: 1;
+      grid-row: content;
+      background-color: white !important;
+      border-top: $grey_lightest;
+      border-top-width: .1em;
+      border-top-style: solid;
+  }
+}
+

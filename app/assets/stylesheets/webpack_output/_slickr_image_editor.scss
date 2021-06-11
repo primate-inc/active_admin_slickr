@@ -1,0 +1,23 @@
+#image_editor {
+  padding: 2em;
+  display: -ms-grid; display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-column-gap: 2em;
+
+  .ReactCrop {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #image_editor_form {
+    @extend %admin_form_basics;
+    button {
+      @extend %button;
+    }
+  }
+}
+
+

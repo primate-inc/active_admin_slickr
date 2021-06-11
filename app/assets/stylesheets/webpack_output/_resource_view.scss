@@ -119,5 +119,36 @@
       }
     }
   }
+
+  .panel { padding: 2em; }
+  .attributes_list {
+    list-style-type: none;
+    padding: 0; margin: 0;
+    li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column;
+      margin-bottom: 1.5em;
+    }
+    .attributes_list_attr_name {
+      @extend %label;
+    }
+    .attributes_list_attr_value {
+      @extend %admin_text_view_field;
+    }
+  }
+  .image {
+    .attributes_list_attr_name {
+      @extend %label;
+      padding-bottom: 0.5em;
+    }
+  }
 }
 

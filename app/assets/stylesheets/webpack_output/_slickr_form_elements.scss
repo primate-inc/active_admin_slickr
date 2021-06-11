@@ -1,0 +1,172 @@
+.logged_in #wrapper .formtastic {
+  padding: 0;
+
+  fieldset.inputs {
+    margin-top: 2em !important; padding: 2em !important;
+    border-bottom: 1px solid $grey_lightest !important;
+
+    ol {
+      li.slickr_settings_wrapper {
+        margin-bottom: .25em !important;
+      }
+    }
+  }
+
+  .actions {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
+
+  fieldset.form_inputs {
+    ol {
+      li {
+        border-bottom: 1px solid $grey_lightest; border-right: 1px solid $grey_lightest; border-left: 1px solid $grey_lightest
+      }
+      li.input {
+        padding: 2em 0;
+        margin-bottom: 0!important;
+      }
+      li {
+
+        input, textarea {
+          width: auto !important;
+          background: none !important;
+          border-bottom: none !important;
+        }
+      }
+      li.password, li.email, li.string, li.select, li.text, li.number {
+
+        .hint-text {
+            @extend .para_small;
+            margin: 0; padding: 0 0.5em;
+            color: $grey;
+        }
+      }
+      li {
+
+        .edit-wrapper {
+          input, textarea {
+            background: none !important;
+            border-bottom: none !important;
+          }
+        }
+
+        .megadraft-editor {
+          padding: .5em;
+        }
+      }
+      li > * {
+        margin: 0 2em !important;
+      }
+    }
+  }
+  .image-picker, .image-picker-new {
+    display: none !important
+  }
+  .image-picker + .text, .image-picker-new + .text {
+
+    .hidden {
+        display: none;
+    }
+
+    .file {
+        label {
+          display: block;
+        }
+        input[type='file'] {
+          padding: 8px 8px 8px .5em !important; height: 60px !important
+        }
+        input[type='file']:before {
+        content: 'Select' !important;
+      }
+    }
+
+    .file.has_image {
+
+      .hint-text {
+            margin-top: 4em;
+      }
+    }
+
+    .file.has_error {
+
+      label {
+            color: $alert !important;
+      }
+    }
+  }
+  .megadraft-text-editor {
+    display: none !important
+  }
+  .megadraft-text-editor + .text > textarea {
+    display: none !important;
+  }
+  .megadraft-text-editor + .text {
+
+    .megadraft {
+         min-height: 5em; margin-bottom: 5em;
+         .megadraft-editor {
+           padding-right: 4em; padding-left: 0.5em;
+         }
+         .sidebar__menu {
+           left: inherit; right: -4em;
+           float: right;
+         }
+    }
+  }
+}
+
+#custom-wrapper {
+  .page_editing_area {
+    fieldset {
+      ol {
+        li.password, li.email, li.string, li.select, li.text, li.number, li.file  {
+
+          .hint-text {
+              @extend .para_small;
+              margin: 0; padding: 0 0.5em;
+              color: $grey;
+          }
+
+          textarea {
+              resize: none;
+          }
+
+          .inline-hints img {
+              margin-left: 0 !important;
+          }
+        }
+        li.file {
+
+          input[type='file'] {
+              padding: 8px 8px 8px .5em !important; height: 60px !important;
+          }
+
+          input[type='file']:before {
+            content: 'Select' !important;
+          }
+        }
+        li.file.has_image {
+
+          .hint-text {
+                margin-top: 4em;
+          }
+        }
+        li {
+
+          .edit-wrapper {
+            input, textarea {
+              background: none !important;
+              border-bottom: none !important;
+            }
+          }
+
+          .megadraft-editor {
+            padding: .5em;
+          }
+        }
+      }
+    }
+  }
+}
+

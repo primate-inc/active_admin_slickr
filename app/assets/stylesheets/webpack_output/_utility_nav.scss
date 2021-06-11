@@ -1,8 +1,16 @@
 .logged_in {
   #utility_nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
     li {
       display: inline-block
     }
+
     li#current_user {
       @extend %user_link;
       display: -webkit-box;
@@ -15,6 +23,7 @@
       -webkit-transition: 0.2s;
       transition: 0.2s
     }
+
     li#current_user:before {
       content: ' ';
       display: inline-block;
@@ -24,6 +33,7 @@
       margin-left: -.25em;
       background: image-url("svgs/user.svg") no-repeat;
     }
+
     li#current_user:hover {
       color: white;
     }

@@ -12,4 +12,14 @@
       background-color: $grey_lightest;
   }
 }
+.logged_in {
+  #search_status_sidebar_section {
+    padding: 2em;
+    h3 {
+      @extend .h3;
+      margin: 0 0 .5em;
+      grid-area: header;
+    }
+  }
+}
 

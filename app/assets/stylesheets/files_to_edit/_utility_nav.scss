@@ -1,5 +1,8 @@
 .logged_in {
   #utility_nav {
+    display: flex;
+    align-items: center;
+
     li {
       display: inline-block;
 

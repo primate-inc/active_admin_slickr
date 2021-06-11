@@ -24,9 +24,25 @@
 @import './utility_nav';
 @import './tabs';
 @import './checkboxes';
+@import './reorderable';
 @import './reorderable_relations';
+@import './admin_utilities';
 
 // external packages
 @import './clockpicker';
 
 @import './vendor_overrides';
+
+// Migrated from slickr
+@import './slickr_elements';
+@import './slickr_page_tree';
+@import "./slickr_page_editing";
+@import './slickr_split_display_with_image';
+@import './slickr_loader';
+@import './slickr_form_elements';
+@import './slickr_file_inputs';
+@import './slickr_custom_wrapper';
+@import './slickr_media_gallery';
+@import './slickr_image_cropper';
+@import './slickr_image_editor';
+@import './slickr_admin_dashboard';

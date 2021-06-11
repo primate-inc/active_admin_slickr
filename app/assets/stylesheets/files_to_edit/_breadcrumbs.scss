@@ -1,5 +1,6 @@
 .logged_in {
-  #wrapper {
+  #wrapper,
+  #custom-wrapper {
     #title_bar {
       #titlebar_left {
         @extend %breadcrumbs;

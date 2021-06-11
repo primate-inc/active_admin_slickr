@@ -1,36 +1,4 @@
 .logged_in {
-  #titlebar_right {
-    .action_items {
-      height: 100%;
-      display: flex;
-
-      span.action_item > a, #title_bar .action_items div.action_item {
-        @extend %action_button;
-        display: flex;
-        align-items: center;
-        svg { fill: $blue;}
-      }
-      div.action_item {
-        &.active {
-          background: $blue; color: white;
-          svg { fill: white; }
-        }
-        .arrow {
-          padding-right: 1.2em;
-          svg { transition: .2s; }
-        }
-        &:hover {
-          > svg { fill: white }
-          .arrow svg { transform: rotate(180deg) }
-          span svg { fill: $blue }
-        }
-      }
-    }
-  }
-}
-
-// FIXME: Update class names/layouts. This was pulled from Slickr CMS but I think its broken with some version of ActiveAdmin.
-.logged_in {
   .action_item.dropdown_item {
     display: flex; align-items: center;
     width: 12em;
@@ -76,5 +44,7 @@
       span:hover { background: $blue; color: white; cursor: pointer; }
       svg { width: 20px; height: 20px; fill: $blue; }
     }
+
   }
 }
+
