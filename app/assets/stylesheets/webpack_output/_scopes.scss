@@ -9,6 +9,7 @@
   @extend %general_link;
   background: $white;
   display: block; padding: .5em 1em;
+  text-transform: capitalize;
 }
 %slickr_active_tab {
   @extend %general_link;
@@ -25,8 +26,10 @@
       #main_content_wrapper {
         #main_content {
           .table_tools {
-            .scopes {
+	    .scopes, .scopes > ul {
               @extend %slickr_tabs;
+	    }
+            .scopes {
               .scope {
                 a {
                   @extend %slickr_tab;

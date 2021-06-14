@@ -131,7 +131,7 @@
         // Don't include &.input here as it has unintended consequenses
         &.password, &.email, &.string, &.select, &.text, &.number, &.datepicker, &.phone, &.country, &.time_picker, &.url, &.file {
           & > label {
-            width: 100%;
+            width: auto;
           }
           label {
             @extend %label;
