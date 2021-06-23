@@ -1,0 +1,17 @@
+.datetime_select .fragments-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+  padding: 1em 1em .5em !important;
+  background: #F2F2F2;
+
+  .fragment label {
+    @extend %label;
+    margin-left: 0;
+    font-size: .75em;
+  }
+}
+

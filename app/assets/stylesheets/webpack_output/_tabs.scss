@@ -25,7 +25,9 @@
                 transition: color 0.2s;
                 a {
                   @extend %tab_link;
+		  border-radius: 3px;
                   padding: 8px 12px; display: inline-block;
+		  border: 1px solid $blue_dark;
                 }
                 a:hover {
                   color: $white;
@@ -36,7 +38,8 @@
                 a {
                     @extend %small_button;
                     padding: 8px 12px;
-                    color: white; border: none; background: $blue_dark;
+                    color: white; background: $blue_dark;
+		    border: 1px solid $blue_dark;
                 }
                 a:hover {
                   background: darken($blue_dark, 10%);
@@ -57,10 +60,14 @@
               }
             }
             .tab-content {
-              legend { visibility: hidden; }
+              /* legend { visibility: hidden; }*/
               .panel h3 {
                 display: none;
               }
+
+	      .ui-tabs-nav {
+		background-color: lighten($blue, 25%);
+	      }
             }
           }
         }
