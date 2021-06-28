@@ -20,8 +20,8 @@
   }
 
   fieldset.form_inputs {
-    ol {
-      li {
+    > ol {
+     > li {
         border-bottom: 1px solid $grey_lightest; border-right: 1px solid $grey_lightest; border-left: 1px solid $grey_lightest;
         &.input {
           padding: 2em 0; margin-bottom: 0!important;
@@ -50,6 +50,9 @@
       }
       li > * {
         margin: 0 2em !important;
+      }
+      > fieldset legend {
+	margin: 1em 2em;
       }
     }
   }

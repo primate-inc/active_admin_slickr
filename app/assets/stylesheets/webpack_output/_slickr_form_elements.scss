@@ -18,15 +18,15 @@
   }
 
   fieldset.form_inputs {
-    ol {
-      li {
+    > ol {
+     > li {
         border-bottom: 1px solid $grey_lightest; border-right: 1px solid $grey_lightest; border-left: 1px solid $grey_lightest
       }
-      li.input {
+     > li.input {
         padding: 2em 0;
         margin-bottom: 0!important;
       }
-      li {
+     > li {
 
         input, textarea {
           width: auto !important;
@@ -34,7 +34,7 @@
           border-bottom: none !important;
         }
       }
-      li.password, li.email, li.string, li.select, li.text, li.number {
+     > li.password, > li.email, > li.string, > li.select, > li.text, > li.number {
 
         .hint-text {
             @extend .para_small;
@@ -42,7 +42,7 @@
             color: $grey;
         }
       }
-      li {
+     > li {
 
         .edit-wrapper {
           input, textarea {
@@ -57,6 +57,9 @@
       }
       li > * {
         margin: 0 2em !important;
+      }
+      > fieldset legend {
+	margin: 1em 2em;
       }
     }
   }

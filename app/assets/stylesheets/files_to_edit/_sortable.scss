@@ -1,0 +1,22 @@
+.logged_in #wrapper{
+  .has_many_container.ui-sortable {
+    fieldset.inputs {
+      position: relative;
+      padding: 0 0 0 2rem !important;
+    }
+
+    li.handle {
+      position: absolute;
+      top: 0; left: 0;
+      background: image-url('svgs/grab.svg') no-repeat;
+      cursor: pointer;
+      color: transparent;
+
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      &:active {
+	cursor: grabbing;
+      }
+    }
+  }
+}

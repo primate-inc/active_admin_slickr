@@ -8,6 +8,11 @@
       background-color: $notice;
       color: white;
     }
+
+    &_alert {
+      background-color: $alert;
+      color: white;
+    }
     &.hide {
       opacity: 0;
     }
