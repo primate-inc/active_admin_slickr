@@ -48,7 +48,10 @@
           padding: .5em;
         }
       }
-      li > * {
+      li > label, 
+      li > input, 
+      li > select, 
+      li > textarea {
         margin: 0 2em !important;
       }
       > fieldset legend {
